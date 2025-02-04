@@ -34,18 +34,22 @@ body{
 }
 .input_box{
   margin-top: 30px;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 15px;
+  margin: 5%;
 }
 .input-box {
-  width: 300px;  
+  width: 90%;  
   height: 40px;  
   font-size: 16px;
   padding: 5px 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 .input-box:hover{
   border: 2px solid #131313;
@@ -58,7 +62,6 @@ body{
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 .sign-in-btn:hover{
   background-color: hsl(181, 40%, 40%); ; 
@@ -81,6 +84,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 90%;
 }
 .google-signup {
   display: flex;
@@ -108,3 +112,4 @@ body{
   color:cadetblue;
   text-decoration: none;
 }
+
