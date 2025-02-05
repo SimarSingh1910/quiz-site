@@ -32,6 +32,6 @@
     </div>
     <div class="rightsidebox"></div>
 
-    <script src="login_script.js"></script>
+    <script src="signup_script.js"></script>
 </body>
 </html>
