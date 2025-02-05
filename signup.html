@@ -13,13 +13,14 @@
                 <p>Sign up</p>
             </div>
             <div class="input_box">
-                <input type="text" class="input-box gmail_input" placeholder="Gmail">
-                <input type="text" class="input-box username_input" placeholder="Username">
-                <input type="password" class="input-box password_input" placeholder="Password ">
-                <input type="password" class="input-box confirm_password_input" placeholder="Confirm Password">
-                <button class="sign-in-btn">Sign Up</button>
+                <input type="text" class="input-box" id="gmail_input" placeholder="Gmail">
+                <input type="text" class="input-box" id="username_input" placeholder="Username">
+                <input type="password" class="input-box" id="password_input" placeholder="Password ">
+                <input type="password" class="input-box" id="confirm_password" placeholder="Confirm Password">
+                <div class="incorrect" id="incorrect_password"><p id="incorrect_text"></p></div>
+                <button class="sign-in-btn" onclick="submit()">Sign Up</button>
                 <div class="small_text_box">
-                    <p class="login">Already have an account?<a href="http://" class="login_link"> Log in</a></p>
+                    <p class="login">Already have an account?<a href="login.html" class="login_link"> Log in</a></p>
                 </div>
                 <div class="line"></div>
                 <div class="google">
