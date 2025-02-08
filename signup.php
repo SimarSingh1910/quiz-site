@@ -13,12 +13,14 @@
                 <p>Sign up</p>
             </div>
             <div class="input_box">
-                <input type="text" class="input-box" id="gmail_input" placeholder="Gmail">
-                <input type="text" class="input-box" id="username_input" placeholder="Username">
-                <input type="password" class="input-box" id="password_input" placeholder="Password ">
-                <input type="password" class="input-box" id="confirm_password" placeholder="Confirm Password">
-                <div class="incorrect" id="incorrect_password"><p id="incorrect_text"></p></div>
+                <form class="signup_form">
+                <input type="text" class="input-box" id="gmail_input" placeholder="Gmail" required>
+                <input type="text" class="input-box" id="username_input" placeholder="Username" required>
+                <input type="password" class="input-box" id="password_input" placeholder="Password " required>
+                <input type="password" class="input-box" id="confirm_password" placeholder="Confirm Password" required>
                 <button class="sign-in-btn" onclick="submit()">Sign Up</button>
+                </form>
+                <div class="incorrect" id="incorrect_password"><p id="incorrect_text"></p></div>
                 <div class="small_text_box">
                     <p class="login">Already have an account?<a href="login.php" class="login_link"> Log in</a></p>
                 </div>
@@ -29,7 +31,6 @@
                         Sign Up with Google
                     </a>
                 </div>
-                
             </div>
         </div>
     </div>
