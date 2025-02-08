@@ -23,7 +23,7 @@ function submit() {
         gmail_arr.push(gmail.value);
         username_arr.push(username.value);
         password_arr.push(password.value);
-        window.location.href = "login.html";
+        window.location.href = "login.php";
     }
     else{
         incorrect.textContent="passwords does not match";
