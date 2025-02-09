@@ -17,7 +17,7 @@
                 <input type="password" class="input-box password_input" placeholder="Password 👁">
                 <button class="sign-in-btn">Log In</button>
                 <div class="small_text_box">
-                    <p class="login">Dont have an account?<a href="http://localhost/voting%20system/github%20clone2/voting-system/signup.php" class="login_link"> sign up</a></p>
+                    <p class="login">Dont have an account?<a href="signup.php" class="login_link"> sign up</a></p>
                 </div>
                 <div class="line"></div>
                 <div class="google">

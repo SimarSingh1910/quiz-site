@@ -118,7 +118,7 @@ body{
     height: 95%;
     width: 100%;
 }
-.incorrect{
+#incorrect_password{
     display: none;
     color: red;
     font-size: 12px;

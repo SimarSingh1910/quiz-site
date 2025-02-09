@@ -22,19 +22,21 @@ function login(){
 }
 
 function submit() {
+    window.alert("inside submit function");
     let gmail=document.getElementById("gmail_input").value;
     let username=document.getElementById("username_input").value;
     let password=document.getElementById("password_input").value;
     let confirm_password=document.getElementById("confirm_password").value;
     let incorrect=document.getElementById("incorrect_text");
+    let incorrect_box=document.getElementById("incorrect_password");
     if(!gmail || !username || !password || !confirm_password){
+        incorrect_box.style.display = "block";
         incorrect.textContent = "All fields are required.";
-        incorrect.style.display = "block";
     }
 
     else if(password != confirm_password) {
+        incorrect_box.style.display = "block";
         incorrect.textContent="passwords do not match";
-        incorrect.style.display = "block";
     }
     else{
         gmail_arr.push(gmail);
@@ -43,15 +45,15 @@ function submit() {
 
         window.location.href = "login.php";
     }
-    gmail.value="";
-    username.value="";
-    password.value="";
-    confirm_password.value="";
-    incorrect.textContent="";
+    // gmail.value="";
+    // username.value="";
+    // password.value="";
+    // confirm_password.value="";
+    // incorrect.textContent="";
 }
 
 //default submit action removal
-document.querySelector(".signup_form").addEventListener("submit", function(event){
+document.getElementById("sign-in-btn").addEventListener("click", function(event){
     event.preventDefault();
     submit();
 });
