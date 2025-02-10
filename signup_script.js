@@ -22,7 +22,6 @@ function login(){
 }
 
 function submit() {
-    window.alert("inside submit function");
     let gmail=document.getElementById("gmail_input").value;
     let username=document.getElementById("username_input").value;
     let password=document.getElementById("password_input").value;
