@@ -13,11 +13,11 @@
                 <p>Sign up</p>
             </div>
             <div class="input_box">
-                <form class="signup_form">
-                    <input type="text" class="input-box" id="gmail_input" placeholder="Gmail" required>
-                    <input type="text" class="input-box" id="username_input" placeholder="Username" required>
-                    <input type="password" class="input-box" id="password_input" placeholder="Password " required>
-                    <input type="password" class="input-box" id="confirm_password" placeholder="Confirm Password" required>
+                <form class="signup_form" action="signup.php" method="POST">
+                    <input type="text" class="input-box" id="gmail_input" name="gmail" placeholder="Gmail" required>
+                    <input type="text" class="input-box" id="username_input" name="username" placeholder="Username" required>
+                    <input type="password" class="input-box" id="password_input" name="password" placeholder="Password " required>
+                    <input type="password" class="input-box" id="confirm_password" name="confirm" placeholder="Confirm Password" required>
                     <button class="sign-in-btn" id="sign-in-btn" type="submit">Sign Up</button>
                 </form>
                 <div class="incorrect" id="incorrect_password"><p id="incorrect_text"></p></div>
@@ -41,3 +41,15 @@
     <script src="signup_script.js"></script>
 </body>
 </html>
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['gmail'])) {
+        $gmail = $_POST['gmail'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $confirm = $_POST['confirm'];
+        
+    }
+} 
+?>

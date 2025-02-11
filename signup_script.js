@@ -42,17 +42,11 @@ function submit() {
         username_arr.push(username);
         password_arr.push(password);
 
-        window.location.href = "login.php";
+        // window.location.href = "login.php";
     }
-    // gmail.value="";
-    // username.value="";
-    // password.value="";
-    // confirm_password.value="";
-    // incorrect.textContent="";
 }
 
 //default submit action removal
 document.getElementById("sign-in-btn").addEventListener("click", function(event){
-    event.preventDefault();
     submit();
 });
