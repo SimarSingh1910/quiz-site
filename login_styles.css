@@ -112,4 +112,18 @@ body{
   color:cadetblue;
   text-decoration: none;
 }
-
+#incorrect_password_login{
+  display: none;
+  color: red;
+  font-size: 12px;
+}
+form{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
