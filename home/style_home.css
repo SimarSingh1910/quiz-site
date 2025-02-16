@@ -23,7 +23,19 @@
 }
 
 .profile{
-    margin-left: 400%;
+    margin-left: 475%;
+}
+
+.profile svg{
+    transition: transform 0.5s ease;
+}
+
+.profile svg.rotate:hover{
+    transform: rotate(60deg);
+}
+
+.dropdown-menu{
+    margin-left: -110px;
 }
 
 .recent{
