@@ -29,13 +29,13 @@
           <li class="nav-item">
             <a class="nav-link" href="#">results</a>
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown profile">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Profile
+              Settings
             </a>
             <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Voter</a></li>
-              <li><a class="dropdown-item" href="#">Candidate</a></li>
+            <li><a class="dropdown-item" href="#">Voter</a></li>
+            <li><a class="dropdown-item" href="#">Candidate</a></li>
            </ul>
           </li>
         </ul>
@@ -62,7 +62,7 @@
   <div class="recent">
     <h1>RECENTS</h1>
   <div class="recents_cont">
-    <div class="recent_poll"><img src="bar graph.jpg" alt="img of graph" height="300px" width="700px"></div>
+    <div class="recent_poll"><img src="bar graph.jpg" alt="img of graph" height="300px" width="695px"></div>
     <div class="recent_poll">this is a div</div>
   </div>
   </div>
