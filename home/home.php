@@ -31,7 +31,7 @@
           </li>
           <li class="nav-item dropdown profile">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Settings
+              <svg width="10px" height="10px" xmlns=""></svg>
             </a>
             <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Voter</a></li>
@@ -62,7 +62,7 @@
   <div class="recent">
     <h1>RECENTS</h1>
   <div class="recents_cont">
-    <div class="recent_poll"><img src="bar graph.jpg" alt="img of graph" height="300px" width="695px"></div>
+    <div class="recent_poll"><img src="bar graph.jpg" alt="img of graph" height="300px" width="645px"></div>
     <div class="recent_poll">this is a div</div>
   </div>
   </div>

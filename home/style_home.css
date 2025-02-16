@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 .navbar .btn-outline-success {
     --bs-btn-color: #2973B2 !important;
@@ -41,7 +40,7 @@
     justify-content: center;
     align-items: center;
     height: 50vh;
-    width: 60vw;
+    width: 100vw;
     flex-wrap: wrap;
     gap: 25px;
     margin-left: -50px;
@@ -54,7 +53,7 @@
 }
 
 .ongoing h1{
-    margin-left: 20px;
+    margin-left: 50px;
     font-family: 'roboto';
 }
 
@@ -66,10 +65,11 @@
     width: 100vw;
     flex-wrap: wrap;
     gap: 25px;
+    margin-left: -50px;
 }
 
 .ongoing_polls{
     border: 2px solid black;     
     height: 400px;
-    width: 700px;
+    width: 650px;
 }
