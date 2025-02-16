@@ -1,0 +1,69 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar .btn-outline-success {
+    --bs-btn-color: #2973B2 !important;
+    --bs-btn-border-color: #2973B2 !important;
+    --bs-btn-hover-bg: #2973B2 !important;
+    --bs-btn-hover-border-color: #FFF !important;
+    --bs-btn-active-color: #2973B2 !important;
+    --bs-btn-active-bg: #2973B2 !important;
+    --bs-btn-active-border-color: #2973B2 !important;
+    --bs-btn-disabled-border-color: #2973B2 !important;
+    --bs-btn-disabled-bg: transparent;
+}
+
+.navbar .btn-outline-success:hover {
+    color: white !important;
+}
+
+.btn{
+    color: var(--bs-btn-color) !important;
+}
+
+.recent{
+    margin-top: 70px;
+}
+
+.recent h1{
+    margin-left: 50px;
+    font-family: 'roboto';
+} 
+
+.recents_cont{
+    display: flex;          
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.recent_poll{
+    border: 2px solid black;     
+    height: 400px;
+    width: 700px;
+}
+
+.ongoing h1{
+    margin-left: 50px;
+    font-family: 'roboto';
+}
+
+.ongoing_cont{
+    display: flex;          
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    width: 100vw;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.ongoing_polls{
+    border: 2px solid black;     
+    height: 400px;
+    width: 700px;
+}
