@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="login_styles.css">
 </head>
+
 <body>
     <div class="leftsidebox">
         <div class="small_signup_box">
@@ -14,11 +16,15 @@
             </div>
             <div class="input_box">
                 <form action="login.php" method="post">
-                    <input type="text" class="input-box username_input" id="username_input_login" name="username_login" placeholder="Username">
-                    <input type="password" class="input-box password_input" id="password_input_login" name="password_login" placeholder="Password 👁">
+                    <input type="text" class="input-box username_input" id="username_input_login" name="username_login"
+                        placeholder="Username">
+                    <input type="password" class="input-box password_input" id="password_input_login"
+                        name="password_login" placeholder="Password 👁">
                     <input class="sign-in-btn" id="log-in-btn" name="submit_login" type="submit" value="Log In">
                 </form>
-                <div class="incorrect" id="incorrect_password_login"><p id="incorrect_text_login"></p></div>
+                <div class="incorrect" id="incorrect_password_login">
+                    <p id="incorrect_text_login"></p>
+                </div>
                 <div class="small_text_box">
                     <p class="login">Dont have an account?<a href="signup.html" class="login_link"> sign up</a></p>
                 </div>
@@ -29,7 +35,7 @@
                         Sign Up with Google
                     </a>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -37,4 +43,5 @@
 
     <script src="login_script.js"></script>
 </body>
+
 </html>

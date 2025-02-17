@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="signup_styles.css">
 </head>
+
 <body>
     <div class="leftsidebox">
         <div class="small_signup_box">
@@ -16,11 +18,15 @@
                 <form class="signup_form" action="index.php" method="POST">
                     <input type="text" class="input-box" id="gmail_input" name="gmail" placeholder="Gmail">
                     <input type="text" class="input-box" id="username_input" name="username" placeholder="Username">
-                    <input type="password" class="input-box" id="password_input" name="password" placeholder="Password ">
-                    <input type="password" class="input-box" id="confirm_password" name="confirm" placeholder="Confirm Password">
+                    <input type="password" class="input-box" id="password_input" name="password"
+                        placeholder="Password ">
+                    <input type="password" class="input-box" id="confirm_password" name="confirm"
+                        placeholder="Confirm Password">
                     <input class="sign-in-btn" id="sign-in-btn" name="submit" type="submit" value="Sign In">
                 </form>
-                <div class="incorrect" id="incorrect_password"><p id="incorrect_text"></p></div>
+                <div class="incorrect" id="incorrect_password">
+                    <p id="incorrect_text"></p>
+                </div>
                 <div class="small_text_box">
                     <p class="login">Already have an account?<a href="login.php" class="login_link"> Log in</a></p>
                 </div>
@@ -40,4 +46,5 @@
 
     <script src="signup_script.js"></script>
 </body>
+
 </html>
