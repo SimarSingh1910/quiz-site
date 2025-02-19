@@ -15,6 +15,6 @@ if (isset($_POST["submit_login"])) {
     $row = mysqli_fetch_assoc($result);
 
     if ($username_login == $row["username"] && password_verify($password_login, $row["password"])) {
-        echo '<script>alert("YOU HAVE SUCCESSFULLY LOGGED IN!!!!!");</script>';
+        echo '<script>window.location.replace("/voting-system/home/home.php");</script>';
     }
 }

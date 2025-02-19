@@ -29,7 +29,7 @@ if (isset($_POST["submit"])) {
                 incorrect.textContent = "Username is already taken";
             </script>';
         }
-        // echo '<script>window.location.href = "login.php";</script>';
+        echo '<script>window.location.href="login.php";</script>';
     }
 }
 mysqli_close($conn);
