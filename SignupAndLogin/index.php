@@ -6,11 +6,6 @@ include("database.php");
 
 if (isset($_POST["submit"])) {
 
-    $gmail = null;
-    $username = null;
-    $password = null;
-    $confirm = null;
-
     $gmail = $_POST["gmail"];
     $username = $_POST["username"];
     $password = $_POST["password"];

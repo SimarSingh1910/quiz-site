@@ -121,7 +121,7 @@ body{
 #incorrect_password{
     display: none;
     color: red;
-    font-size: 12px;
+    font-size: 13px;
 }
 form{
     margin: 0;
