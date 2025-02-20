@@ -14,8 +14,7 @@ if (isset($_POST["submit"])) {
     if ($gmail != null && $username != null && $password != null && $confirm != null) {
 
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        $_SESSION["gmail"] = $gmail;
-        $_SESSION["username"] = $username;
+        $_SESSION['user'] = ['name' => $username , 'email' => $gmail];
 
         $sql = "INSERT INTO users(username,password,email) VALUES('$username','$hash','$gmail')";
 

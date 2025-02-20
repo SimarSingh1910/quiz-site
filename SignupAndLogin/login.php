@@ -15,6 +15,13 @@ if (isset($_POST["submit_login"])) {
     $row = mysqli_fetch_assoc($result);
 
     if ($username_login == $row["username"] && password_verify($password_login, $row["password"])) {
-        echo '<script>window.location.replace("/voting-system/home/home.php");</script>';
+        $_SESSION['user'] = ['name' => $username_login , 'email' => $row["email"]];
+        echo '<script>window.location.replace("/voting-system/home/home.html");</script>';
+    }
+    else {
+        echo '<script>
+                incorrect_box.style.display = "block";
+                incorrect.textContent = "Username/Password is incorrect";
+            </script>';
     }
 }
