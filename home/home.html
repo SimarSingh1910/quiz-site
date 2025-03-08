@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+` <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,73 +8,56 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="style_home.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <!-- Navingation bar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Voting</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">results</a>
-          </li>
-          <!-- added a div box which has username -->
-          <li class="nav-item">
-            <div class="username-box">
-              <p id="username"></p>
-            </div>
-          </li>
-          <li class="nav-item dropdown profile">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <svg widht="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns"
-                fill="#48A6A7" stroke="#48A6A7">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  <title>settings</title>
-                  <desc>Created with Sketch Beta.</desc>
-                  <defs> </defs>
-                  <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-                    <g id="Icon-Set" sketch:type="MSLayerGroup" transform="translate(-101.000000, -360.000000)"
-                      fill="#2973B2">
-                      <path
-                        d="M128.52,381.134 L127.528,382.866 C127.254,383.345 126.648,383.508 126.173,383.232 L123.418,381.628 C122.02,383.219 120.129,384.359 117.983,384.799 L117.983,387 C117.983,387.553 117.54,388 116.992,388 L115.008,388 C114.46,388 114.017,387.553 114.017,387 L114.017,384.799 C111.871,384.359 109.98,383.219 108.582,381.628 L105.827,383.232 C105.352,383.508 104.746,383.345 104.472,382.866 L103.48,381.134 C103.206,380.656 103.369,380.044 103.843,379.769 L106.609,378.157 C106.28,377.163 106.083,376.106 106.083,375 C106.083,373.894 106.28,372.838 106.609,371.843 L103.843,370.232 C103.369,369.956 103.206,369.345 103.48,368.866 L104.472,367.134 C104.746,366.656 105.352,366.492 105.827,366.768 L108.582,368.372 C109.98,366.781 111.871,365.641 114.017,365.201 L114.017,363 C114.017,362.447 114.46,362 115.008,362 L116.992,362 C117.54,362 117.983,362.447 117.983,363 L117.983,365.201 C120.129,365.641 122.02,366.781 123.418,368.372 L126.173,366.768 C126.648,366.492 127.254,366.656 127.528,367.134 L128.52,368.866 C128.794,369.345 128.631,369.956 128.157,370.232 L125.391,371.843 C125.72,372.838 125.917,373.894 125.917,375 C125.917,376.106 125.72,377.163 125.391,378.157 L128.157,379.769 C128.631,380.044 128.794,380.656 128.52,381.134 L128.52,381.134 Z M130.008,378.536 L127.685,377.184 C127.815,376.474 127.901,375.749 127.901,375 C127.901,374.252 127.815,373.526 127.685,372.816 L130.008,371.464 C130.957,370.912 131.281,369.688 130.733,368.732 L128.75,365.268 C128.203,364.312 126.989,363.983 126.041,364.536 L123.694,365.901 C122.598,364.961 121.352,364.192 119.967,363.697 L119.967,362 C119.967,360.896 119.079,360 117.983,360 L114.017,360 C112.921,360 112.033,360.896 112.033,362 L112.033,363.697 C110.648,364.192 109.402,364.961 108.306,365.901 L105.959,364.536 C105.011,363.983 103.797,364.312 103.25,365.268 L101.267,368.732 C100.719,369.688 101.044,370.912 101.992,371.464 L104.315,372.816 C104.185,373.526 104.099,374.252 104.099,375 C104.099,375.749 104.185,376.474 104.315,377.184 L101.992,378.536 C101.044,379.088 100.719,380.312 101.267,381.268 L103.25,384.732 C103.797,385.688 105.011,386.017 105.959,385.464 L108.306,384.099 C109.402,385.039 110.648,385.809 112.033,386.303 L112.033,388 C112.033,389.104 112.921,390 114.017,390 L117.983,390 C119.079,390 119.967,389.104 119.967,388 L119.967,386.303 C121.352,385.809 122.598,385.039 123.694,384.099 L126.041,385.464 C126.989,386.017 128.203,385.688 128.75,384.732 L130.733,381.268 C131.281,380.312 130.957,379.088 130.008,378.536 L130.008,378.536 Z M116,378 C114.357,378 113.025,376.657 113.025,375 C113.025,373.344 114.357,372 116,372 C117.643,372 118.975,373.344 118.975,375 C118.975,376.657 117.643,378 116,378 L116,378 Z M116,370 C113.261,370 111.042,372.238 111.042,375 C111.042,377.762 113.261,380 116,380 C118.739,380 120.959,377.762 120.959,375 C120.959,372.238 118.739,370 116,370 L116,370 Z"
-                        id="settings" sketch:type="MSShapeGroup"> </path>
-                    </g>
-                  </g>
-                </g>
-              </svg>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Voter</a></li>
-              <li><a class="dropdown-item" href="#">Candidate</a></li>
-            </ul>
-          </li>
-        </ul>
-        <!-- <form class="d-flex" role="search">
+      <svg height="25px" width="25px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+        <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
-       </form> -->
+       </form>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
+<nav class="navbar">
+  <ul>
+    <li>
+      <svg height="30px" width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+    </li>
+    <li>
+      <a href="#" class="nav-link active" aria-current="page"><img src="#" alt="" class="logo"></a>
+    </li>
+    <li>
+      <a href="#" class="nav-link leaderboard">leaderboards</a>
+    </li>
+    <li>
+      <a href="#" class="nav-link Settings">Settings</a>
+    </li>
+  </ul>
+  <form action="/submit-form" method="post">
+    <input type="search" placeholder="Search">
+    <button type="submit">Search</button>
+  </form>
+</nav>
+
+
+  <!-- <div class="quiz-info">
+    <h2>🚀 Elevate Your Knowledge!</h2>
+    <p>Engaging quizzes, instant results, and fun learning experiences!</p>
+    <ul class="pros">
+        <li>✔ Interactive & Fun</li>
+        <li>✔ Instant Feedback</li>
+        <li>✔ Wide Range of Topics</li>
+        <li>✔ Challenge Friends</li>
+    </ul>
+</div> -->
 
 <!-- Quizs -->
   <div class="container text-center ">
@@ -130,10 +113,8 @@
       </div>
     </div>
   </div>
- 
-
-
-
+  
+  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est maiores enim incidunt ad. Perspiciatis, eius quasi. Cupiditate voluptatum aliquam vitae quisquam provident, non voluptatibus culpa eum quaerat eius explicabo nesciunt, ducimus iure magnam quis sequi omnis odio, architecto ea ad sapiente fugiat ipsa praesentium. Fugit impedit, enim expedita atque mollitia autem magni labore soluta culpa tempore consequatur esse corporis facere doloribus deleniti maiores accusamus nisi voluptatem repellat sapiente dignissimos reiciendis. Aliquam tempore nihil ipsam fugit sunt voluptatem saepe, quibusdam quos quas, quod non harum. Eius iure eveniet assumenda, similique quas culpa corrupti mollitia. Tempore officia aspernatur a, voluptate facilis excepturi provident molestiae ipsam nihil beatae quia quo alias ad suscipit magni dicta et animi ea! Dolorum eveniet veritatis exercitationem nulla ut fuga aut. Enim, sapiente beatae. Incidunt inventore, ipsum esse ratione similique facilis, tempora enim harum veniam, repudiandae odit consequatur corporis minus dicta culpa? Laudantium quos, quisquam consequatur ad officiis veritatis minima et error optio iure cupiditate possimus libero, fugiat voluptate alias quo. Commodi fugit vero nesciunt quisquam est incidunt ab dolores sapiente esse amet fuga, eligendi facilis sequi consequuntur, autem corporis explicabo possimus doloribus? Ducimus officia fugiat consequatur excepturi libero deleniti tenetur, culpa molestias nulla maiores porro, alias vel, vitae iusto! Ipsam voluptas facere eligendi error quod nesciunt, eos doloribus ipsa dolorem pariatur explicabo voluptatem iusto beatae magnam vitae repellendus ab vel ad provident harum dolorum corrupti, nisi maxime sequi? Quidem, ex. Alias consequatur veniam reiciendis iure facilis corrupti sit aut quaerat aliquid, iste ex. Fugit tenetur sit rem nulla nam, iure voluptas voluptatem optio repellat officia doloremque vero accusamus ad! Repellat voluptate atque doloribus nam rem, culpa eius. Commodi et optio voluptatum quia ipsum accusamus fugiat cupiditate consectetur rem exercitationem. Alias harum tempore dolor autem sit est nam reprehenderit enim, iusto vitae in nihil consequuntur velit illo iure nemo blanditiis voluptatibus deleniti magni rerum. Dignissimos quae ea maxime. Eaque harum voluptatibus, porro quam autem animi vitae sequi atque provident fugiat recusandae ipsum hic deserunt, nobis libero repellat soluta. Cum voluptatum nihil quia fuga quo error porro repellat ex quaerat magni exercitationem voluptatem eos sint explicabo, facere laudantium ab dolorem, eum modi autem animi nobis necessitatibus expedita? Ab corporis itaque similique natus laborum dicta ratione, consequuntur, non pariatur aliquid quis quas eum sit perspiciatis! Unde accusantium voluptatum ipsam sapiente, laboriosam mollitia ullam laudantium fuga omnis temporibus perferendis impedit fugit quo optio libero nam debitis molestias doloremque, obcaecati officiis neque? Voluptatem voluptas natus ipsam dicta aspernatur repudiandae a impedit aut totam, est pariatur commodi eos saepe, aliquid perferendis obcaecati, qui quisquam ullam laudantium corrupti modi quae? Ex explicabo aliquid quos quas nostrum animi deleniti quam, excepturi numquam omnis ea sint minus repellat debitis incidunt impedit voluptatem sit! Ex, tempora nisi.</div>
 
   <script src="home_script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"

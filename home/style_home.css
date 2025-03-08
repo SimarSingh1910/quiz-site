@@ -3,7 +3,14 @@
     padding: 0;
 }
 
-.navbar .btn-outline-success {
+body {
+    background-color: rgb(242, 239, 231);
+    font-family: "Comic Neue", cursive;
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* .navbar .btn-outline-success {
     --bs-btn-color: #2973B2 !important;
     --bs-btn-border-color: #2973B2 !important;
     --bs-btn-hover-bg: #2973B2 !important;
@@ -13,35 +20,54 @@
     --bs-btn-active-border-color: #2973B2 !important;
     --bs-btn-disabled-border-color: #2973B2 !important;
     --bs-btn-disabled-bg: transparent;
+    overflow: hidden;
 }
 
-.navbar .btn-outline-success:hover {
-    color: white !important;
+.navbar{
+    background-color: #EEF1DA;
+    margin-top: 0;
+    top: 0px;
+    position: sticky;
+    z-index: 1000;
+
 }
 
-.btn {
-    color: var(--bs-btn-color) !important;
+.btn{
+    padding-right: 22px;
+} */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #FFF;
+    z-index: 1000;
+    margin: 0 !important; /* Ensures no margin */
+    padding: 10px 20px; /* Adds some spacing */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.profile {
-    margin-left: 475%;
+.navbar ul{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    font-family: "Comic neue", serif;
+    font-size: 25px;
+    font-weight: 600;
+    font-style: normal;
 }
 
-.profile svg {
-    transition: transform 0.5s ease;
+.navbar .logo{
+    height: 45px;
+    width: 45px;
+    border: 2px solid black;
 }
 
-.profile svg.rotate:hover {
-    transform: rotate(60deg);
-}
-
-.dropdown-menu {
-    margin-left: -110px;
-}
-
-body {
-    background-color: rgb(242, 239, 231);
-}
 
 .col-sm {
     background-color: #ffffff;
@@ -54,13 +80,13 @@ body {
 }
 
 .col-sm:hover {
-    background-color: #243850;
+    /* background-color: rgba(154, 203, 208, 0.5); */
     box-shadow: 4px 4px 14px hsl(200, 4%, 31%) !important;
     cursor: pointer;
-    transform: scale(1.10);
+    transform: scale(1.03);
 }
 
 .text {
     font-weight: bolder;
-    color: rgb(154, 203, 208);
+    color: #18230F;
 }
