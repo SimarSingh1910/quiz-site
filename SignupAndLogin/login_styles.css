@@ -16,7 +16,7 @@ body{
 
   height:100vh;
   width: 40%;
-  background-color: #48A6A7;
+  background-color: rgb(176, 96, 32);
 }
 .small_signup_box{
   background-color: #ffffff;
@@ -30,7 +30,7 @@ body{
   max-width: auto;
   font-weight: bold;
   font-size: 1.5em;
-  color: #48A6A7;
+  color: #333333;
 }
 .input_box{
   margin-top: 30px;
@@ -55,7 +55,7 @@ body{
   border: 2px solid #131313;
 }
 .sign-in-btn {
-  background-color: #48A6A7; 
+  background-color:rgb(176, 96, 32) ; 
   color: white;
   padding: 10px 20px;
   font-size: 16px;
@@ -64,7 +64,7 @@ body{
   cursor: pointer;
 }
 .sign-in-btn:hover{
-  background-color: hsl(181, 40%, 40%); ; 
+  background-color: #8A4D18;  
 }
 .small_text_box{
   text-align: center;
@@ -109,7 +109,7 @@ body{
   background-color: #f8f8f8;
 }
 .login_link{
-  color:cadetblue;
+  color:rgb(176, 96, 32);
   text-decoration: none;
 }
 #incorrect_password_login{
