@@ -25,6 +25,8 @@
 
 
 $(document).ready(function() {
+    //SEARCH BAR
+
     // Predefined quizzes list
     let quizzes = ["sports", "music", "movies", "food and drink", "games", "literature", "history", "geography", "maths"];
 
@@ -63,6 +65,9 @@ $(document).ready(function() {
     searchBox.on("input", () => {
         $(this).removeClass("red-placeholder").attr("placeholder", "Search");
     });
+
+
+    //QUIZ TABS
 
     // Quiz Boxes Click Event
     $(".quizBox").on("click", () => {
