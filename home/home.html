@@ -25,27 +25,31 @@
       </div>
     </div>
   </nav> -->
+<header>
+  <nav class="navbar">
+   <ul>
+      <li>
+        <svg height="30px" width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+     </li>
+     <li>
+       <img src="http://localhost/voting-system/home/quiz-logo.jpg" alt="" class="logo">
+     </li>
+      <li>
+       <a href="#" class="nav-link leaderboard">leaderboard</a>
+     </li>
+     <li>
+       <a href="#" class="nav-link Settings">Settings</a>
+     </li>
+   </ul>
+    <form class="search-container"action="/submit.html" method="post">
+     <input type="search" placeholder="Search" class="searchInput">
+     <button type="submit" class="searchbtn">Search</button>
+    </form>
+  </nav>
+  <div class="description">
 
-<nav class="navbar">
-  <ul>
-    <li>
-      <svg height="30px" width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-    </li>
-    <li>
-      <img src="http://localhost/voting-system/home/quiz-logo.jpg" alt="" class="logo">
-    </li>
-    <li>
-      <a href="#" class="nav-link leaderboard">leaderboard</a>
-    </li>
-    <li>
-      <a href="#" class="nav-link Settings">Settings</a>
-    </li>
-  </ul>
-  <form class="search-container"action="/submit-form" method="post">
-    <input type="search" placeholder="Search">
-    <button type="submit">Search</button>
-  </form>
-</nav>
+  </div>
+</header>
 
 
   <!-- <div class="quiz-info">
@@ -62,51 +66,51 @@
 <!-- Quizs -->
   <div class="container text-center ">
     <div class="row row-cols-2 justify-content-center gap-5 mt-5 mb-5">
-      <div class="col-sm p-3 border rounded border-0 shadow-lg">
-        <div class="boder-none " id="Sports">
+      <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="sports" onclick="quizPage()">
+        <div class="boder-none ">
           <h2 class="text">Sports Quiz</h2>
         </div>
       </div>
-      <div class="col-sm p-3 border rounded border-0 shadow-lg">
-        <div class="boder-none " id="Music">
+      <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="music" onclick="quizPage()">
+        <div class="boder-none " >
           <h2 class="text">Music Quiz</h2>
         </div>
       </div>
-      <div class="col-sm p-3 border rounded border-0 shadow-lg">
+      <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="movies"onclick="quizPage()">
         <div class="boder-none ">
           <h2 class="text">Movies Quiz</h2>
         </div>
       </div>
     </div>
     <div class="row row-cols-2 justify-content-center gap-5 mt-5 mb-5">
-      <div class="col-sm p-3 border rounded border-0 shadow-lg">
+      <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="foodAndDrink"onclick="quizPage()">
         <div class="boder-none ">
           <h2 class="text">Food & Drink Quiz</h2>
         </div>
       </div>
-      <div class="col-sm p-3 border rounded border-0 shadow-lg">
+      <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="games"onclick="quizPage()">
         <div class="boder-none ">
           <h2 class="text">Games Quiz</h2>
         </div>
       </div>
-      <div class="col-sm p-3 border rounded border-0 shadow-lg">
+      <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="literature"onclick="quizPage()">
         <div class="boder-none ">
           <h2 class="text">Literature Quiz</h2>
         </div>
       </div>
     </div>
     <div class="row row-cols-2 justify-content-center gap-5 mt-5 mb-5">
-      <div class="col-sm p-3 border rounded border-0 shadow-lg">
+      <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="history"onclick="quizPage()">
         <div class="boder-none ">
           <h2 class="text">History Quiz</h2>
         </div>
       </div>
-      <div class="col-sm p-3 border rounded border-0 shadow-lg">
+      <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="geography"onclick="quizPage()">
         <div class="boder-none ">
           <h2 class="text">Geography Quiz</h2>
         </div>
       </div>
-      <div class="col-sm p-3 border rounded border-0 shadow-lg">
+      <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="maths"onclick="quizPage()">
         <div class="boder-none ">
           <h2 class="text">Maths Quiz</h2>
         </div>
@@ -116,10 +120,11 @@
   
   <footer>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est maiores enim incidunt ad. Perspiciatis, eius quasi. Cupiditate voluptatum aliquam vitae quisquam provident, non voluptatibus culpa eum quaerat eius explicabo nesciunt, ducimus iure magnam quis sequi omnis odio, architecto ea ad sapiente fugiat ipsa praesentium. Fugit impedit, enim expedita atque mollitia autem magni labore soluta culpa tempore consequatur esse corporis facere doloribus deleniti maiores accusamus nisi voluptatem repellat sapiente dignissimos reiciendis. Aliquam tempore nihil ipsam fugit sunt voluptatem saepe, quibusdam quos quas, quod non harum. Eius iure eveniet assumenda, similique quas culpa corrupti mollitia. Tempore officia aspernatur a, voluptate facilis excepturi provident molestiae ipsam nihil beatae quia quo alias ad suscipit magni dicta et animi ea! Dolorum eveniet veritatis exercitationem nulla ut fuga aut. Enim, sapiente beatae. Incidunt inventore, ipsum esse ratione similique facilis, tempora enim harum veniam, repudiandae odit consequatur corporis minus dicta culpa? Laudantium quos, quisquam consequatur ad officiis veritatis minima et error optio iure cupiditate possimus libero, fugiat voluptate alias quo. Commodi fugit vero nesciunt quisquam est incidunt ab dolores sapiente esse amet fuga, eligendi facilis sequi consequuntur, autem corporis explicabo possimus doloribus? Ducimus officia fugiat consequatur excepturi libero deleniti tenetur, culpa molestias nulla maiores porro, alias vel, vitae iusto! Ipsam voluptas facere eligendi error quod nesciunt, eos doloribus ipsa dolorem pariatur explicabo voluptatem iusto beatae magnam vitae repellendus ab vel ad provident harum dolorum corrupti, nisi maxime sequi? Quidem, ex. Alias consequatur veniam reiciendis iure facilis corrupti sit aut quaerat aliquid, iste ex. Fugit tenetur sit rem nulla nam, iure voluptas voluptatem optio repellat officia doloremque vero accusamus ad! Repellat voluptate atque doloribus nam rem, culpa eius. Commodi et optio voluptatum quia ipsum accusamus fugiat cupiditate consectetur rem exercitationem. Alias harum tempore dolor autem sit est nam reprehenderit enim, iusto vitae in nihil consequuntur velit illo iure nemo blanditiis voluptatibus deleniti magni rerum. Dignissimos quae ea maxime. Eaque harum voluptatibus, porro quam autem animi vitae sequi atque provident fugiat recusandae ipsum hic deserunt, nobis libero repellat soluta. Cum voluptatum nihil quia fuga quo error porro repellat ex quaerat magni exercitationem voluptatem eos sint explicabo, facere laudantium ab dolorem, eum modi autem animi nobis necessitatibus expedita? Ab corporis itaque similique natus laborum dicta ratione, consequuntur, non pariatur aliquid quis quas eum sit perspiciatis! Unde accusantium voluptatum ipsam sapiente, laboriosam mollitia ullam laudantium fuga omnis temporibus perferendis impedit fugit quo optio libero nam debitis molestias doloremque, obcaecati officiis neque? Voluptatem voluptas natus ipsam dicta aspernatur repudiandae a impedit aut totam, est pariatur commodi eos saepe, aliquid perferendis obcaecati, qui quisquam ullam laudantium corrupti modi quae? Ex explicabo aliquid quos quas nostrum animi deleniti quam, excepturi numquam omnis ea sint minus repellat debitis incidunt impedit voluptatem sit! Ex, tempora nisi.</footer>
 
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="home_script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+  crossorigin="anonymous"></script>
 </body>
 
 </html>

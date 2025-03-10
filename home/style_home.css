@@ -81,6 +81,8 @@ body {
     cursor: pointer;
 }
 
+
+
 .navbar .search-container {
     display: flex;
     align-items: center;
@@ -116,6 +118,10 @@ body {
 
 .navbar button:hover {
     background-color: #8A4D18; 
+}
+
+.red-placeholder::placeholder {
+    color: red;
 }
 
 /* navbar end */
