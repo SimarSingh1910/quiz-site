@@ -120,7 +120,7 @@ body {
     background-color: #8A4D18; 
 }
 
-.red-placeholder::placeholder {
+.red-placeholder::placeholder{
     color: red;
 }
 

@@ -24,53 +24,50 @@
 // }
 
 
+$(document).ready(function() {
+    // Predefined quizzes list
+    let quizzes = ["sports", "music", "movies", "food and drink", "games", "literature", "history", "geography", "maths"];
 
+    let searchBox = $(".searchInput").eq(0);
+    let searchBtn = $(".searchbtn").eq(0);
 
-//navigation bar
-
-//1.search box implementations
-let searchBox = $(".searchInput").eq(0);
-searchBox.on("keydown", (e) => {
-    if(e.key === "Enter"){
-        if(!searchBox.val().trim()){
-            searchBox.attr("placeholder", "Field is empty");
-            searchBox.addClass("red-placeholder");
-            e.preventdefault()
+    //quiz spelling checker
+    function checkQuizAndRedirect() {
+        let searchValue = searchBox.val().trim().toLowerCase();
+        
+        if (!searchValue) {
+            searchBox.attr("placeholder", "Field is empty").addClass("red-placeholder");
+        } else if (quizzes.includes(searchValue)) {
+            window.location.href = "./allQuiz.html";
+        } else {
+            searchBox.val("");
+            searchBox.attr("placeholder", "Not Available").addClass("red-placeholder");
         }
     }
-});
 
-//2.search button implementations
-let searchbtn = $(".searchbtn").eq(0);
-searchbtn.on("click", (e) => {
-    if(!searchBox.val().trim()){
-        searchBox.attr("placeholder", "Field is empty");
-        searchBox.addClass("red-placeholder");
-        e.preventdefault();
-    }
-});
+    //funcitonality on pressing enter key
+    searchBox.on("keydown", (e) => {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            checkQuizAndRedirect();
+        }
+    });
 
-//3.Form submission prevention
-let searchForm = $(".search-container");
-searchForm.on("submit", (e) => {
-    let searchContent = searchBox.val().trim();
-    if (!searchContent) {
+    //functionality on pressing search btn
+    searchBtn.on("click", (e) => {
         e.preventDefault();
-    }
+        checkQuizAndRedirect();
+    });
+
+    // Removing Red Placeholder When User Starts Typing Again
+    searchBox.on("input", () => {
+        $(this).removeClass("red-placeholder").attr("placeholder", "Search");
+    });
+
+    // Quiz Boxes Click Event
+    $(".quizBox").on("click", () => {
+        window.location.href = "./allQuiz.html";
+    });
 });
 
 
-
-
-
-//Quiz tabs
-
-//quiz box implementations
-const quizBoxes = document.getElementsByClassName("quizBox");           //returns an array of elements having class: "quizBox".
-function quizPage(){
-    for(let i = 0; i < quizBoxes.length; i++){
-        quizBoxes[i].addEventListener("click", () => {
-          window.location.href="./allQuiz.html";
-        });
-    }
-};
