@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Comic Neue", cursive;
+    font-weight: 900;
+    font-style: normal;
+    color: #333333;
+}
+
+.container-fluid .outer-row {
+    height: 100vh;
+}
+
+.col-7 {
+    background-color: #F2EFE7;
+    padding: 0;
+}
+
+.col-5 {
+    background-color: rgb(176, 96, 32);
+}
+
+h1 {
+    font-weight: bolder !important;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+}
+
+hr {
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+}
