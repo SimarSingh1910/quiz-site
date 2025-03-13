@@ -24,6 +24,15 @@ function submit() {
         toEmpty();
         return true;
     }
+    else if (!isvalidPassword(password)) {
+        let signup_box=document.getElementById("small_signup_box");
+        signup_box.style.height="85%";
+        incorrect_box.style.display = "block";
+        incorrect_box.style.marginLeft = "15px";
+        incorrect.textContent = "Password must contain at least 8 characters, including uppercase, lowercase, and a number";
+        toEmpty();
+        return true;
+    }
     else if (password !== confirm_password) {
         incorrect_box.style.display = "block";
         incorrect.textContent = "Passwords do not match";
@@ -33,6 +42,10 @@ function submit() {
     else {
         return false;
     }
+}
+function isvalidPassword(password) {
+    const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9]).{8,}$/;
+    return regex.test(password);
 }
 
 function isValidEmail(email) {

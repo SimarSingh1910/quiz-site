@@ -20,7 +20,7 @@ body{
 }
 .small_signup_box{
     background-color: #ffffff;
-    height: 80vh;
+    height: 80%;
     width: 40%;
     border-radius: 15px;
     box-shadow: 10px 10px 20px #0000004d;
@@ -118,7 +118,7 @@ body{
     height: 95%;
     width: 100%;
 }
-#incorrect_password{
+.incorrect{
     display: none;
     color: red;
     font-size: 13px;

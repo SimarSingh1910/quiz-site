@@ -16,7 +16,7 @@ if (isset($_POST["submit_login"])) {
 
     if ($username_login == $row["username"] && password_verify($password_login, $row["password"])) {
         $_SESSION['user'] = ['name' => $username_login , 'email' => $row["email"]];
-        echo '<script>window.location.replace("/voting-system/home/home.html");</script>';
+        echo '<script>window.location.href="/Quiz-Website/home/home.html";</script>';
     }
     else {
         echo '<script>
