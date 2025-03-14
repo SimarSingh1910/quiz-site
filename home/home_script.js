@@ -67,6 +67,18 @@ $(document).ready(function() {
     });
 
 
+
+
+    //aside navbar
+    function displayAside() {
+        $(".asideNavbar").toggleClass("showAside");
+        $(".navbar").toggleClass("collapse");
+    };
+    
+    $("#navSVG").on("click", displayAside);
+
+
+
     //QUIZ TABS
 
     // Quiz Boxes Click Event
