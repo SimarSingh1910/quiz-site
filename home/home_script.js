@@ -59,7 +59,14 @@ $(document).ready(function() {
     //aside navbar
     function displayAside() {
         $(".asideNavbar").toggleClass("showAside");
-        $(".navbar").toggleClass("collapse");
+        $(".navbar").toggleClass("move"); 
+        if ($(".navbar").hasClass("move")) {
+            $(".navbar").css("width","1290px");
+            $(".navbar").css("transition","width 0.3s ease-in-out");
+            $(".navbar").css("left", "250px");
+        } else {
+            $(".navbar").css("left", "0");
+        }
     };
     
     $("#navSVG").on("click", displayAside);
