@@ -10,46 +10,19 @@ body {
     font-style: normal;
 }
 
-/* .navbar .btn-outline-success {
-    --bs-btn-color: #2973B2 !important;
-    --bs-btn-border-color: #2973B2 !important;
-    --bs-btn-hover-bg: #2973B2 !important;
-    --bs-btn-hover-border-color: #FFF !important;
-    --bs-btn-active-color: #2973B2 !important;
-    --bs-btn-active-bg: #2973B2 !important;
-    --bs-btn-active-border-color: #2973B2 !important;
-    --bs-btn-disabled-border-color: #2973B2 !important;
-    --bs-btn-disabled-bg: transparent;
-    overflow: hidden;
-}
-
-.navbar{
-    background-color: #EEF1DA;
-    margin-top: 0;
-    top: 0px;
-    position: sticky;
-    z-index: 1000;
-
-}
-
-.btn{
-    padding-right: 22px;
-} */
-
-
-/* navbar styles */
+/*--------navbar---------- */
 
 .navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 5rem;
     background-color:rgb(176, 96, 32);
     color: #333333;
-    z-index: 1000;
-    margin: 0 !important; /* Ensures no margin */
-    padding: 10px 20px; /* Adds some spacing */
+    z-index: 500;
+    margin: 0 !important;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -124,7 +97,42 @@ body {
     color: red;
 }
 
-/* navbar end */
+#navSVG:hover{
+    cursor: pointer;
+}
+
+/* -----aside navabar------- */
+.asideNavbar {
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    height: 100vh;
+    width: 250px;
+    background-color: white;
+    border-right: 2px solid black;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out; 
+    z-index: 1000;
+}
+
+/* When sidebar is toggled */
+.asideNavbar.showAside {
+    left: 0; 
+}
+
+/* Adjusting navbar when sidebar opens */
+.navbar ul{
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.navbar.collapse ul {
+    transform: translateX(250px);
+}
+
+
+
+/* quiz templates */
 
 .col-sm {
     /* background-color: #ffffff; */
