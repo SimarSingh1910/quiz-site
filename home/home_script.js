@@ -19,9 +19,10 @@ fetch('home.php')
         }
         else {
             username.textContent = "Guest";
-            useremail.textContent = ""; 
+            useremail.textContent = "";
             logout.textContent = "Login";
-            logout.classList.add("login");
+            logout.classList.add("signup");
+            console.log("login button");
         }
     })
     .catch(error => console.error('Error fetching session data:', error));
@@ -111,25 +112,42 @@ $(document).ready(function () {
 
     $("#navSVG").on("click", displayAside);
     // USER LOGIN
-    $(document).on("click", ".login", function () {
+    $(document).on("click", ".login", function (event) {
+        event.preventDefault();
         console.log("User login page");
         window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
     });
     
     // USER LOGOUT
-    $(".logout-btn").on("click", function () {
-        // session ends here
+    $(".logout-btn").on("click", function (event) {
+        event.preventDefault(); // Prevent default button behavior
+    
+        console.log("Logging out...");
+        
+        // Clear session storage and local storage
         localStorage.removeItem('userSession');
         localStorage.removeItem('quizHistory');
         sessionStorage.removeItem('userSession');
-        fetch('/logout.php', { method: 'POST' }) 
-        .then(() => {
-            console.log("User logged out");
-            window.location.href = "/Quiz-Website/home/home.html";
-        })
-        .catch(error => console.error("Logout failed:", error));
+    
+        // Make sure logout request is completed before redirecting
+        fetch('logout.php', { method: 'POST' })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Logout request failed");
+                }
+                console.log("User logged out successfully");
+                return response.text(); // Read the response to avoid fetch errors
+            })
+            .then(() => {
+                // Redirect to login page
+                window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
+            })
+            .catch(error => {
+                console.error("Logout failed:", error);
+                alert("Logout failed. Please try again.");
+            });
     });
-
+    
 
     //QUIZ TABS
 

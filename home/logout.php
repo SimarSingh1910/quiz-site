@@ -1,4 +1,4 @@
 <?php
-$_SESSION['user']=null;
-
+// $_SESSION['user']=null;
+exit();
 ?>

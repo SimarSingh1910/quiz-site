@@ -29,7 +29,7 @@ function submit() {
         signup_box.style.height="85%";
         incorrect_box.style.display = "block";
         incorrect_box.style.marginLeft = "15px";
-        incorrect.textContent = "Password must contain at least 8 characters, including uppercase, lowercase, and a number";
+        incorrect.textContent = "Password must contain at least 8 characters, including uppercase, lowercase, number and a speical character.";
         toEmpty();
         return true;
     }
