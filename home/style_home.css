@@ -103,21 +103,51 @@ body {
 .asideNavbar {
     position: fixed;
     top: 0;
-    left: -250px; 
+    left: -15vw; 
     height: 100vh;
-    width: 250px;
+    width: 15vw;
+    margin: 0 !important;
+    padding: 0 !important;
     background-color: white;
     border-right: 2px solid black;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
     transition: left 0.3s ease-in-out; 
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+.asideNavbar .row{
+    width: 100% !important;
+}
+.AsideLogo img{
+    margin-left:1.25rem ;
+}
 /* When sidebar is toggled */
 .asideNavbar.showAside {
     left: 0; 
 }
 
+.profile-container p{
+    margin: 0 !important;
+    padding: 0 0 0 1.25rem !important;
+}
+.logout-btn{
+    margin: 1rem 0 1rem 1.25rem;
+    padding: 8px 14px;
+    font-size: 16px;
+    color: white;
+    background-color: #B06020;
+    border: 2px solid #8A4D18;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #8A4D18; 
+}
 
 /* quiz templates */
 
@@ -159,5 +189,16 @@ body {
 @media (max-width: 500px) {
     .navbar ul li a{
         display: none !important;
+    }
+    .asideNavbar{
+        left: -50vw;
+        width: 50vw;
+    }
+}
+
+@media (max-width: 768px) and (min-width:500px) {
+    .asideNavbar{
+        left: -25vw;
+        width: 25vw;
     }
 }

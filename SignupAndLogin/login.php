@@ -5,7 +5,7 @@ include("login.html");
 include("database.php");
 
 if (isset($_POST["submit_login"])) {
-    
+
     $username_login = $_POST["username_login"];
     $password_login = $_POST["password_login"];
 
@@ -15,11 +15,12 @@ if (isset($_POST["submit_login"])) {
     $row = mysqli_fetch_assoc($result);
 
     if ($username_login == $row["username"] && password_verify($password_login, $row["password"])) {
-        $_SESSION['user'] = ['name' => $username_login , 'email' => $row["email"]];
+        $_SESSION['user'] = ['name' => $username_login, 'email' => $row["email"]];
         echo '<script>window.location.href="/Quiz-Website/home/home.html";</script>';
-    }
-    else {
+    } else {
         echo '<script>
+                let incorrect = document.getElementById("incorrect_text_login");
+                let incorrect_box = document.getElementById("incorrect_password_login");
                 incorrect_box.style.display = "block";
                 incorrect.textContent = "Username/Password is incorrect";
             </script>';

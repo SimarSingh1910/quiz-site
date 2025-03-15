@@ -1,17 +1,32 @@
 fetch('home.php')
-    .then(response => {
+    .then((response) => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
+        // console.log(response);
         return response.json(); // Parse JSON only if response is valid
     })
-    .then(sessionData => {
+    .then((sessionData) => {
         console.log(sessionData);
         window.userSession = sessionData;
+        // user profile in aside navbar
+        let username = document.querySelector('.profile-name');
+        let useremail = document.querySelector('.profile-email');
+        let logout = document.querySelector('.logout-btn');
+        if (window.userSession && window.userSession.user) {
+            username.textContent = window.userSession.user.name;
+            useremail.textContent = window.userSession.user.email;
+        }
+        else {
+            username.textContent = "Guest";
+            useremail.textContent = ""; 
+            logout.textContent = "Login";
+            logout.classList.add("login");
+        }
     })
     .catch(error => console.error('Error fetching session data:', error));
 
-$(document).ready(function() {
+$(document).ready(function () {
     //SEARCH BAR
 
     // Predefined quizzes list
@@ -23,7 +38,7 @@ $(document).ready(function() {
     //quiz spelling checker
     function checkQuizAndRedirect() {
         let searchValue = searchBox.val().trim().toLowerCase();
-        
+
         if (!searchValue) {
             searchBox.attr("placeholder", "Field is empty").addClass("red-placeholder");
         } else if (quizzes.includes(searchValue)) {
@@ -59,18 +74,61 @@ $(document).ready(function() {
     //aside navbar
     function displayAside() {
         $(".asideNavbar").toggleClass("showAside");
-        $(".navbar").toggleClass("move"); 
-        if ($(".navbar").hasClass("move")) {
-            $(".navbar").css("width","1290px");
-            $(".navbar").css("transition","width 0.3s ease-in-out");
-            $(".navbar").css("left", "250px");
-        } else {
-            $(".navbar").css("left", "0");
+        $(".navbar").toggleClass("move");
+
+        if ($(".navbar").hasClass("move") && window.innerWidth > 768) {
+            $(".navbar").css({
+                "width": "85vw",
+                "left": "15vw",
+                "transition": "width 0.3s ease-in-out, left 0.3s ease-in-out"
+            });
+        }
+        else if ($(".navbar").hasClass("move") && window.innerWidth <= 500) {
+            $(".navbar").css({
+                "width": "50vw",
+                "left": "50vw",
+                "transition": "width 0.3s ease-in-out, left 0.3s ease-in-out"
+            });
+        }
+        else if ($(".navbar").hasClass("move") && window.innerWidth <= 768) {
+            $(".navbar").css({
+                "width": "75vw",
+                "left": "25vw",
+                "transition": "width 0.3s ease-in-out, left 0.3s ease-in-out"
+            });
+            $(".navbar .search-container").css("display", "none");
+        }
+        else {
+            $(".navbar").css({
+                "width": "100%",
+                "left": "0",
+                "transition": "width 0.4s cubic-bezier(0.4, 0, 0.2, 1), left 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+            });
+            $(".navbar .search-container").css({ "display": "block", "transition": "display 0.4s cubic-bezier(0.4, 0, 0.2, 1)" });
         }
     };
-    
-    $("#navSVG").on("click", displayAside);
 
+
+    $("#navSVG").on("click", displayAside);
+    // USER LOGIN
+    $(document).on("click", ".login", function () {
+        console.log("User login page");
+        window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
+    });
+    
+    // USER LOGOUT
+    $(".logout-btn").on("click", function () {
+        // session ends here
+        localStorage.removeItem('userSession');
+        localStorage.removeItem('quizHistory');
+        sessionStorage.removeItem('userSession');
+        fetch('/logout.php', { method: 'POST' }) 
+        .then(() => {
+            console.log("User logged out");
+            window.location.href = "/Quiz-Website/home/home.html";
+        })
+        .catch(error => console.error("Logout failed:", error));
+    });
 
 
     //QUIZ TABS
@@ -81,7 +139,7 @@ $(document).ready(function() {
     });
 
     //user profile
-    $(".profile").on("click", function() {
+    $(".profile").on("click", function () {
         if (window.userSession && window.userSession.user) {
             console.log("User profile page");
             window.location.href = "/Quiz-website/Profile/profile.html";

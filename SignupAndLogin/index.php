@@ -24,6 +24,8 @@ if (isset($_POST["submit"])) {
         } catch (mysqli_sql_exception) {
             echo '<script>
                 console.log("unable to register user");
+                let incorrect = document.getElementById("incorrect_text");
+                let incorrect_box = document.getElementById("incorrect_password");
                 incorrect_box.style.display = "block";
                 incorrect.textContent = "Username is already taken";
             </script>';
