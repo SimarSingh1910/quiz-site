@@ -1,5 +1,6 @@
 console.log("starting");
-const URL = "https://opentdb.com/api.php?amount=10&category=21&difficulty=medium&type=multiple";
+let quiz_category = localStorage.getItem("selectedCategory");
+let URL = `https://opentdb.com/api.php?amount=10&category=${quiz_category}&difficulty=easy&type=multiple`;
 let results = [];
 let correctAnswers = [];
 function decodeHtmlEntities(text) {

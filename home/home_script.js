@@ -30,44 +30,44 @@ fetch('home.php')
 $(document).ready(function () {
     //SEARCH BAR
 
-    // Predefined quizzes list
-    let quizzes = ["sports", "music", "movies", "food and drink", "games", "literature", "history", "geography", "maths"];
+    // // Predefined quizzes list
+    // let quizzes = ["sports", "music", "movies", "anime", "video games", "general knowledge", "history", "geography", "Celebrities"];
 
-    let searchBox = $(".searchInput").eq(0);
-    let searchBtn = $(".searchbtn").eq(0);
+    // let searchBox = $(".searchInput").eq(0);
+    // let searchBtn = $(".searchbtn").eq(0);
 
-    //quiz spelling checker
-    function checkQuizAndRedirect() {
-        let searchValue = searchBox.val().trim().toLowerCase();
+    // //quiz spelling checker
+    // function checkQuizAndRedirect() {
+    //     let searchValue = searchBox.val().trim().toLowerCase();
 
-        if (!searchValue) {
-            searchBox.attr("placeholder", "Field is empty").addClass("red-placeholder");
-        } else if (quizzes.includes(searchValue)) {
-            window.location.href = "/Quiz-Website/AllQuizzes/allQuiz.html";
-        } else {
-            searchBox.val("");
-            searchBox.attr("placeholder", "Not Available").addClass("red-placeholder");
-        }
-    }
+    //     if (!searchValue) {
+    //         searchBox.attr("placeholder", "Field is empty").addClass("red-placeholder");
+    //     } else if (quizzes.includes(searchValue)) {
+    //         window.location.href = "/Quiz-Website/AllQuizzes/allQuiz.html";
+    //     } else {
+    //         searchBox.val("");
+    //         searchBox.attr("placeholder", "Not Available").addClass("red-placeholder");
+    //     }
+    // }
 
-    //funcitonality on pressing enter key
-    searchBox.on("keydown", (e) => {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            checkQuizAndRedirect();
-        }
-    });
+    // //funcitonality on pressing enter key
+    // searchBox.on("keydown", (e) => {
+    //     if (e.key === "Enter") {
+    //         e.preventDefault();
+    //         checkQuizAndRedirect();
+    //     }
+    // });
 
-    //functionality on pressing search btn
-    searchBtn.on("click", (e) => {
-        e.preventDefault();
-        checkQuizAndRedirect();
-    });
+    // //functionality on pressing search btn
+    // searchBtn.on("click", (e) => {
+    //     e.preventDefault();
+    //     checkQuizAndRedirect();
+    // });
 
-    // Removing Red Placeholder When User Starts Typing Again
-    searchBox.on("input", () => {
-        $(this).removeClass("red-placeholder").attr("placeholder", "Search");
-    });
+    // // Removing Red Placeholder When User Starts Typing Again
+    // searchBox.on("input", () => {
+    //     $(this).removeClass("red-placeholder").attr("placeholder", "Search");
+    // });
 
 
 
@@ -152,9 +152,9 @@ $(document).ready(function () {
     //QUIZ TABS
 
     // Quiz Boxes Click Event
-    $(".quizBox").on("click", () => {
-        window.location.href = "/Quiz-Website/AllQuizzes/allQuiz.html";
-    });
+    // $(".quizBox").on("click", () => {
+    //     window.location.href = "/Quiz-Website/AllQuizzes/allQuiz.html";
+    // });
 
     //user profile
     $(".profile").on("click", function () {
