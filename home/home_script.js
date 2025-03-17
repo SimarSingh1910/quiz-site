@@ -28,50 +28,6 @@ fetch('home.php')
     .catch(error => console.error('Error fetching session data:', error));
 
 $(document).ready(function () {
-    //SEARCH BAR
-
-    // // Predefined quizzes list
-    // let quizzes = ["sports", "music", "movies", "anime", "video games", "general knowledge", "history", "geography", "Celebrities"];
-
-    // let searchBox = $(".searchInput").eq(0);
-    // let searchBtn = $(".searchbtn").eq(0);
-
-    // //quiz spelling checker
-    // function checkQuizAndRedirect() {
-    //     let searchValue = searchBox.val().trim().toLowerCase();
-
-    //     if (!searchValue) {
-    //         searchBox.attr("placeholder", "Field is empty").addClass("red-placeholder");
-    //     } else if (quizzes.includes(searchValue)) {
-    //         window.location.href = "/Quiz-Website/AllQuizzes/allQuiz.html";
-    //     } else {
-    //         searchBox.val("");
-    //         searchBox.attr("placeholder", "Not Available").addClass("red-placeholder");
-    //     }
-    // }
-
-    // //funcitonality on pressing enter key
-    // searchBox.on("keydown", (e) => {
-    //     if (e.key === "Enter") {
-    //         e.preventDefault();
-    //         checkQuizAndRedirect();
-    //     }
-    // });
-
-    // //functionality on pressing search btn
-    // searchBtn.on("click", (e) => {
-    //     e.preventDefault();
-    //     checkQuizAndRedirect();
-    // });
-
-    // // Removing Red Placeholder When User Starts Typing Again
-    // searchBox.on("input", () => {
-    //     $(this).removeClass("red-placeholder").attr("placeholder", "Search");
-    // });
-
-
-
-
     //aside navbar
     function displayAside() {
         $(".asideNavbar").toggleClass("showAside");
@@ -79,29 +35,29 @@ $(document).ready(function () {
 
         if ($(".navbar").hasClass("move") && window.innerWidth > 768) {
             $(".navbar").css({
-                "width": "85vw",
-                "left": "15vw",
+                "width": "80vw",
+                "left": "17vw",
                 "transition": "width 0.3s ease-in-out, left 0.3s ease-in-out"
             });
         }
         else if ($(".navbar").hasClass("move") && window.innerWidth <= 500) {
             $(".navbar").css({
-                "width": "50vw",
-                "left": "50vw",
+                "width": "45vw",
+                "left": "52vw",
                 "transition": "width 0.3s ease-in-out, left 0.3s ease-in-out"
             });
         }
         else if ($(".navbar").hasClass("move") && window.innerWidth <= 768) {
             $(".navbar").css({
-                "width": "75vw",
-                "left": "25vw",
+                "width": "70vw",
+                "left": "27vw",
                 "transition": "width 0.3s ease-in-out, left 0.3s ease-in-out"
             });
             $(".navbar .search-container").css("display", "none");
         }
         else {
             $(".navbar").css({
-                "width": "100%",
+                "width": "97%",
                 "left": "0",
                 "transition": "width 0.4s cubic-bezier(0.4, 0, 0.2, 1), left 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
             });
@@ -117,18 +73,18 @@ $(document).ready(function () {
         console.log("User login page");
         window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
     });
-    
+
     // USER LOGOUT
     $(".logout-btn").on("click", function (event) {
         event.preventDefault(); // Prevent default button behavior
-    
+
         console.log("Logging out...");
-        
+
         // Clear session storage and local storage
         localStorage.removeItem('userSession');
         localStorage.removeItem('quizHistory');
         sessionStorage.removeItem('userSession');
-    
+
         // Make sure logout request is completed before redirecting
         fetch('logout.php', { method: 'POST' })
             .then(response => {
@@ -147,14 +103,6 @@ $(document).ready(function () {
                 alert("Logout failed. Please try again.");
             });
     });
-    
-
-    //QUIZ TABS
-
-    // Quiz Boxes Click Event
-    // $(".quizBox").on("click", () => {
-    //     window.location.href = "/Quiz-Website/AllQuizzes/allQuiz.html";
-    // });
 
     //user profile
     $(".profile").on("click", function () {
@@ -167,6 +115,3 @@ $(document).ready(function () {
         }
     });
 });
-
-
-

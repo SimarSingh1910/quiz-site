@@ -1,13 +1,12 @@
-let category;
 $(document).ready(function () {
     //SEARCH BAR
 
     // Predefined quizzes list
-    let quizzes = ["sports", "music", "movies", "anime", "video games", "general knowledge", "history", "geography", "Celebrities"];
     let categoryArray = [21, 12, 11, 31, 15, 9, 23, 22, 26];
     let searchBox = $(".searchInput").eq(0);
     let searchBtn = $(".searchbtn").eq(0);
     let searchValue;
+    let category;
     //quiz spelling checker
     function checkQuizAndRedirect(SearchValue) {
         // apply switch case to searchValue
@@ -71,6 +70,12 @@ $(document).ready(function () {
 
     // Quiz Boxes Click Event
     $(".quizBox").on("click", function () {
+        searchValue = $(this).attr("id");
+        checkQuizAndRedirect(searchValue);
+    });
+
+    // aside navbar options click function
+    $(".p-3").on("click", function () {
         searchValue = $(this).attr("id");
         checkQuizAndRedirect(searchValue);
     });

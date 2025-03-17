@@ -38,13 +38,26 @@ function AnswerDisplay() {
 
 fetching(URL);
 document.querySelector(".btn").addEventListener("click", () => {
+    console.log("button clicked");
     let score = 0;
     for (let ques in results) {
         let userAnswer = document.querySelector(`input[name="answer${ques}"]:checked`).value;
+        $(`#answer${ques}`).text(`Your Answer : ${userAnswer}`);
+        $(`#correctAnswer${ques}`).text(`Correct Answer : ${correctAnswers[ques]}`);
         if (userAnswer === correctAnswers[ques]) {
+            $(`#feedback${ques}`).css("color", "green");
+            $(`#feedback${ques}`).text("Your Answer is CORRECT");
+            $(`#answer${ques}`).css("color", "green");
+            $(`#correctAnswer${ques}`).css("color", "green");
             score++;
         }
+        else {
+            $(`#feedback${ques}`).css("color", "red");
+            $(`#feedback${ques}`).text("Your Answer is INCORRECT");
+            $(`#answer${ques}`).css("color", "red");
+            $(`#correctAnswer${ques}`).css("color", "red");
+        }
     }
-    alert(`Your Score is ${score}`);
-
+    $(".score").css("display", "block");
+    $("#score").text(`Your Score is ${score}`);
 });
