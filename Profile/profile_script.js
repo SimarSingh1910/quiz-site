@@ -70,54 +70,6 @@ $(document).ready(function () {
     });
 
 
-
-
-    //aside navbar
-    function displayAside() {
-        $(".asideNavbar").toggleClass("showAside");
-        $(".navbar").toggleClass("move");
-
-        if ($(".navbar").hasClass("move") && window.innerWidth > 768) {
-            $(".navbar").css({
-                "width": "85vw",
-                "left": "15vw",
-                "transition": "width 0.3s ease-in-out, left 0.3s ease-in-out"
-            });
-        }
-        else if ($(".navbar").hasClass("move") && window.innerWidth <= 500) {
-            $(".navbar").css({
-                "width": "50vw",
-                "left": "50vw",
-                "transition": "width 0.3s ease-in-out, left 0.3s ease-in-out"
-            });
-        }
-        else if ($(".navbar").hasClass("move") && window.innerWidth <= 768) {
-            $(".navbar").css({
-                "width": "75vw",
-                "left": "25vw",
-                "transition": "width 0.3s ease-in-out, left 0.3s ease-in-out"
-            });
-            $(".navbar .search-container").css("display", "none");
-        }
-        else {
-            $(".navbar").css({
-                "width": "100%",
-                "left": "0",
-                "transition": "width 0.4s cubic-bezier(0.4, 0, 0.2, 1), left 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
-            });
-            $(".navbar .search-container").css({ "display": "block", "transition": "display 0.4s cubic-bezier(0.4, 0, 0.2, 1)" });
-        }
-    };
-
-
-    $("#navSVG").on("click", displayAside);
-    // USER LOGIN
-    $(document).on("click", ".login", function (event) {
-        event.preventDefault();
-        console.log("User login page");
-        window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
-    });
-    
     // USER LOGOUT
     $(".logout-btn").on("click", function (event) {
         event.preventDefault(); // Prevent default button behavior
