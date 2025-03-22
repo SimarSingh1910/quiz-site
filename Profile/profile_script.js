@@ -1,4 +1,4 @@
-fetch('home.php')
+fetch('/Quiz-Website/home/home.php')
     .then((response) => {
         if (!response.ok) {
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -82,7 +82,7 @@ $(document).ready(function () {
         sessionStorage.removeItem('userSession');
     
         // Make sure logout request is completed before redirecting
-        fetch('logout.php', { method: 'POST' })
+        fetch('/Quiz-Website/home/logout.php', { method: 'POST' })
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Logout request failed");

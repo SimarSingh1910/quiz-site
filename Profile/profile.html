@@ -16,20 +16,33 @@
 </head>
 
 <body>
+    <aside class="sidebar">
+        <div class="asideNavbar container gap-3">
+            <div class="row row-cols-1 gap-3">
+                <div class="AsideLogo col">
+                    <img src="quiz-logo.jpg" alt="" class="logo">
+                </div>
+                <div class="col">
+                    <ul class="ml-5">
+                        <li class="p-3" id="home">Home</li>
+                        <li class="p-3" id="about">About</li>
+                        <li class="p-3" id="contact">Contact</li>
+                        <li class="p-3" id="settings">Settings</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row row-cols-1 text-center">
+                <div class="profile-container col">
+                    <p class="profile-name">Username</p>
+                    <p class="profile-email">email</p>
+                    <!-- logout button -->
+                    <button class="logout-btn">Logout</button>
+                </div>
+            </div>
+    </aside>
     <header>
-        <nav class="navbar">
+        <nav class="navbar rounded-pill">
             <ul>
-                <li>
-                    <svg id="navSVG" height="30px" width="30px" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                        <g id="SVGRepo_iconCarrier">
-                            <path d="M4 6H20M4 12H20M4 18H20" stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round"></path>
-                        </g>
-                    </svg>
-                </li>
                 <li>
                     <img src="quiz-logo.jpg" alt="" class="logo">
                 </li>
@@ -48,7 +61,29 @@
     </header>
 
     <!-- profile form -->
+    <main>
+        <div class="profile-box" id="profile-box">
+            <div class="header_text">
+                <p>Profile</p>
+            </div>
+            <div class="input_box">
+                <form class="profile-form" action="" method="POST">
+                    <label for="first-name">First Name</label>
+                    <input type="text" class="input-box" id="first-name" name="first-name" placeholder="Enter your First Name">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" class="input-box" id="last-name" name="last-name" placeholder="Enter your Last Name">
+                    <label for="username">Username</label>
+                    <input type="text" class="input-box" id="Username" name="username" placeholder="Enter your Username">
+                    <label for="gmail">Email</label>
+                    <input type="test" class="input-box" id="gmail" name="gmail" placeholder="Enter your Email">
+                    <label for="age">Age</label>
+                    <input type="number" class="input-box" id="age" name="age" placeholder="Enter your Age">
 
+                    <input class="submit-btn" id="submit-btn" name="submit" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </main>
 
 
 
