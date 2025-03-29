@@ -13,11 +13,16 @@
     --quizbox-hover: #8A4D18;
     --sidebar-item: rgba(255, 255, 255, 0.1);
     --sidebar-item-hover: rgba(255, 255, 255, 0.3);
-    --primary-color: #B06020;   /* Warm Orange */
-    --secondary-color: #8A4D18; /* Deep Brown-Orange */
-    --accent-color: #D9A441;    /* Muted Gold */
-    --neutral-color: #F3E1C0;   /* Warm Beige */
-    --contrast-color: #2F5D62;  /* Deep Teal */
+    --primary-color: #B06020;
+    /* Warm Orange */
+    --secondary-color: #8A4D18;
+    /* Deep Brown-Orange */
+    --accent-color: #D9A441;
+    /* Muted Gold */
+    --neutral-color: #F3E1C0;
+    /* Warm Beige */
+    --contrast-color: #2F5D62;
+    /* Deep Teal */
 }
 
 * {
@@ -38,8 +43,8 @@ body {
     position: sticky;
     top: 0;
     left: 17%;
-    margin: 0 auto !important;
-    width: 82%;
+    margin: 0 1.5% !important;
+    width: 97%;
     height: 5rem;
     background-color: var(--navbar-gold);
     color: var(--bg-light);
@@ -61,7 +66,7 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 15px;
+    gap: 2rem;
     list-style: none;
     font-family: "Comic neue", serif;
     font-size: 25px;
@@ -76,168 +81,55 @@ body {
     cursor: pointer;
 }
 
-.navbar .search-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.navbar input {
-    padding: 8px 12px;
-    border: 2px solid var(--text-dark);
-    border-radius: 6px;
-    font-size: 16px;
-    color: #333;
-    background-color: var(--bg-light);
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.navbar input:focus {
-    border-color: #8A4D18;
-    box-shadow: 0 0 5px rgba(176, 96, 32, 0.5);
-}
-
-.navbar button {
-    padding: 8px 14px;
-    font-size: 16px;
-    color: white;
-    background-color: #B06020;
-    border: 2px solid #8A4D18;
-    border-radius: 6px;
+.logo:hover {
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.navbar button:hover {
-    background-color: #8A4D18;
-}
-
-.red-placeholder::placeholder {
-    color: red;
 }
 
 #navSVG:hover {
     cursor: pointer;
 }
 
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0vw;
-    height: 100vh;
-    width: 15vw;
-    margin: 0 !important;
-    padding: 0 !important;
-    background-color: var(--sidebar-dark);
-    color: var(--bg-light);
-    border-right: 2px solid black;
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-    transition: left 0.3s ease-in-out;
-    z-index: 1000;
-    /* Enable scrolling */
-    overflow-y: auto;
-}
-
-.asideNavbar{
-    height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.asideNavbar ul {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    list-style: none;
-    text-align: center;
-}
-
-.p-3 {
-    /* border: 2px solid black; */
-    border-radius: 5px;
-    background-color: var(--sidebar-item);
-}
-
-.p-3:hover {
-    cursor: pointer;
-    background-color: var(--sidebar-item-hover);
-}
-
-.asideNavbar .row {
-    width: 100% !important;
-}
-
-.AsideLogo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.AsideLogo img {
-    margin: 1.25rem 0 0 1.25rem;
-}
-
-.profile-container p {
-    margin: 0 !important;
-    padding: 0 0 0 1.25rem !important;
-}
-
-.logout-btn {
-    margin: 1rem 0 1rem 1.25rem;
-    padding: 8px 14px;
-    font-size: 16px;
-    color: white;
-    background-color: #B06020;
-    border: 2px solid #8A4D18;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.logout-btn:hover {
-    background-color: #8A4D18;
-}
-
 /* main form  */
-.profile-box{
+.profile-box {
     position: relative;
     background-color: #ffffff;
-    height:auto;
+    height: auto;
     width: 40%;
     border-radius: 15px;
     box-shadow: 10px 10px 20px #0000004d;
-    top:6rem;
-    left: 35%;
+    top: 5rem;
+    left: 30%;
 }
-.header_text{
-    padding-top:2rem;
+
+.header_text {
+    padding-top: 2rem;
     text-align: center;
     font-weight: bold;
     font-size: 1.5em;
     color: #333333;
 }
-.input_box{
+
+.input_box {
     margin-top: 10px;
 }
 
 .submit-btn {
-    background-color: var(--quizbox-bg); 
-    color:var(--bg-light);
+    background-color: var(--quizbox-bg) !important;
+    color: var(--bg-light) !important;
     padding: 10px 20px;
     font-size: 16px;
-    border: 2px solid var(--quizbox-hover);
+    border: 2px solid var(--quizbox-hover) !important;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 5px;
-}
-.submit-btn:hover{
-    background-color:var(--quizbox-hover) ; 
+    transition: background-color 0.3s ease;
 }
 
-main form{
+.submit-btn:hover {
+    background-color: var(--quizbox-hover) !important;
+}
+
+main form {
     margin: 0;
     padding: 10px;
     width: 100%;
@@ -248,43 +140,72 @@ main form{
     width: 100%;
     gap: 15px;
 }
-main form input{
+
+main form input {
     padding: 10px;
     border-radius: 5px;
     width: 90%;
     margin-bottom: 10px;
     border: 2px solid lightgray;
 }
-main form input:hover{
+
+select {
+    color: #757575;
+}
+
+select:focus,
+select:valid {
+    color: black;
+}
+
+main form input:hover {
     border: 2px solid black;
 }
-main form label{
+
+main form select {
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+    margin-bottom: 10px;
+    border: 2px solid lightgray;
+}
+
+main form select:hover {
+    border: 2px solid black;
+}
+
+main form label {
     align-self: start;
     margin-left: 2rem;
 }
+
 /* media queries for navbar */
 
 @media (max-width: 675px) {
     .search-container {
-        display:none !important;;
+        display: none !important;
+        ;
     }
 }
+
 @media (max-width: 500px) {
-    .navbar ul li a{
+    .navbar ul li a {
         display: none !important;
     }
-    .asideNavbar{
+
+    .asideNavbar {
         left: -50vw;
         width: 50vw;
     }
 }
 
 @media (max-width: 768px) and (min-width:500px) {
-    .asideNavbar{
+    .asideNavbar {
         left: -25vw;
         width: 25vw;
     }
 }
+
 /* Optional: Customize scrollbar */
 body::-webkit-scrollbar {
     width: 8px;
@@ -299,6 +220,7 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
     background: rgba(19, 19, 19, 0.33);
 }
+
 /* Optional: Customize scrollbar */
 .sidebar::-webkit-scrollbar {
     width: 8px;
