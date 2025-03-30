@@ -1,42 +1,81 @@
-fetch('home.php')
-    .then((response) => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        // console.log(response);
-        return response.json(); // Parse JSON only if response is valid
-    })
-    .then((sessionData) => {
-        console.log(sessionData);
-        window.userSession = sessionData;
-        // user profile in aside navbar
-        let username = document.querySelector('.profile-name');
-        let useremail = document.querySelector('.profile-email');
-        let logout = document.querySelector('.logout-btn');
-        if (window.userSession && window.userSession.user) {
-            username.textContent = window.userSession.user.name;
-            useremail.textContent = window.userSession.user.email;
-        }
-        else {
-            username.textContent = "Guest";
-            useremail.textContent = "";
-            logout.textContent = "Login";
-            logout.classList.add("signup");
-            console.log("login button");
-        }
-    })
-    .catch(error => console.error('Error fetching session data:', error));
+import { supabase } from '../supabase/supabaseClient';
+
+const updateUserProfile = (user) => {
+    if (!user) {
+        console.warn("No user session found.");
+        return;
+    }
+
+    // Select UI elements
+    let usernameElement = document.querySelector('.profile-name');
+    let useremailElement = document.querySelector('.profile-email');
+
+    // Fetch user data from Supabase profiles table
+    supabase
+        .from('profiles')
+        .select('name, email')
+        .eq('id', user.id)
+        .single()
+        .then(({ data, error }) => {
+            if (error) {
+                console.error("Error fetching profile data:", error);
+                return;
+            }
+            // Update UI with fetched user data
+            if (data) {
+                usernameElement.textContent = data.name || "No Name";
+                useremailElement.textContent = data.email || "No Email";
+            }
+        });
+};
+
+
+const fetchSession = async () => {
+    const { data, error } = await supabase.auth.getSession();
+
+    if (error) {
+        console.error("Error fetching session data:", error);
+    } else if (data.session && data.session.user) {
+        console.log("User session:", data.session.user);
+        updateUserProfile(data.session.user); 
+    } else {
+        console.log("No active session.");
+    }
+};
+
+fetchSession();
+
+// Update profile function 
+const updateProfile = async () => {
+    let newName = prompt("Enter your new name:");
+    if (!newName) return;
+
+    const { data, error } = await supabase.auth.getUser();
+    if (error || !data?.user) {
+        alert("User not logged in");
+        return;
+    }
+
+    const { error: updateError } = await supabase
+        .from('profiles')
+        .update({ name: newName })
+        .eq('id', data.user.id);
+
+    if (updateError) {
+        console.error('Update Error:', updateError);
+        alert("Profile update failed.");
+    } else {
+        alert("Profile updated successfully.");
+    }
+};
 
 $(document).ready(function () {
-    //SEARCH BAR
-
-    // Predefined quizzes list
+    // SEARCH BAR
     let quizzes = ["sports", "music", "movies", "food and drink", "games", "literature", "history", "geography", "maths"];
 
     let searchBox = $(".searchInput").eq(0);
     let searchBtn = $(".searchbtn").eq(0);
 
-    //quiz spelling checker
     function checkQuizAndRedirect() {
         let searchValue = searchBox.val().trim().toLowerCase();
 
@@ -50,7 +89,6 @@ $(document).ready(function () {
         }
     }
 
-    //funcitonality on pressing enter key
     searchBox.on("keydown", (e) => {
         if (e.key === "Enter") {
             e.preventDefault();
@@ -58,48 +96,32 @@ $(document).ready(function () {
         }
     });
 
-    //functionality on pressing search btn
     searchBtn.on("click", (e) => {
         e.preventDefault();
         checkQuizAndRedirect();
     });
 
-    // Removing Red Placeholder When User Starts Typing Again
-    searchBox.on("input", () => {
+    searchBox.on("input", function() {
         $(this).removeClass("red-placeholder").attr("placeholder", "Search");
     });
 
-
     // USER LOGOUT
-    $(".logout-btn").on("click", function (event) {
-        event.preventDefault(); // Prevent default button behavior
-    
+    $(".logout-btn").on("click", async function (e) {
+        e.preventDefault(); 
+
         console.log("Logging out...");
         
-        // Clear session storage and local storage
+        const { error } = await supabase.auth.signOut();
+        if (error) {
+            console.error("Logout failed:", error);
+            alert("Logout failed. Please try again.");
+            return;
+        }
+
         localStorage.removeItem('userSession');
-        localStorage.removeItem('quizHistory');
         sessionStorage.removeItem('userSession');
-    
-        // Make sure logout request is completed before redirecting
-        fetch('logout.php', { method: 'POST' })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Logout request failed");
-                }
-                console.log("User logged out successfully");
-                return response.text(); // Read the response to avoid fetch errors
-            })
-            .then(() => {
-                // Redirect to login page
-                window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
-            })
-            .catch(error => {
-                console.error("Logout failed:", error);
-                alert("Logout failed. Please try again.");
-            });
+
+        console.log("User logged out successfully");
+        window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
     });
 });
-
-
-
