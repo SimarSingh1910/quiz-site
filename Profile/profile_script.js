@@ -104,7 +104,12 @@ $(document).ready(function () {
     searchBox.on("input", function() {
         $(this).removeClass("red-placeholder").attr("placeholder", "Search");
     });
-
+    $("#dob").inputmask("99-99-9999", { 
+        placeholder: "DD-MM-YYYY",
+        showMaskOnHover: false,
+        alias: "datetime",
+        inputFormat: "dd-mm-yyyy"
+    });
     // USER LOGOUT
     $(".logout-btn").on("click", async function (e) {
         e.preventDefault(); 

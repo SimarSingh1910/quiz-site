@@ -1,23 +1,35 @@
+:root {
+    --bg-light: #F3E1C0;
+    --sidebar-dark: #3E2612;
+    --navbar-gold: #D9A441;
+    --text-dark: #8A4D18;
+    --hover-accent: #B06020;
+    --quizbox-bg: rgb(176, 96, 32);
+    --quizbox-hover: #8A4D18;
+    --sidebar-item: rgba(255, 255, 255, 0.1);
+    --sidebar-item-hover: rgba(255, 255, 255, 0.3);
+}
+
 * {
     margin: 0;
     padding: 0;
     font-family: "Comic Neue", cursive;
     font-weight: 900;
     font-style: normal;
-    color: #333333;
+    color: var(--sidebar-dark);
 }
 
 .container-fluid .outer-row {
     height: 100vh;
 }
 
-.col-7 {
-    background-color: #F2EFE7;
+.col-6 {
+    background-color: var(--bg-light);
     padding: 0;
 }
 
-.col-5 {
-    background-color: rgb(176, 96, 32);
+.col-3 {
+    background-color: var(--quizbox-bg);
 }
 
 h1 {
@@ -26,7 +38,23 @@ h1 {
     padding-top: 10px !important;
 }
 
+h2 {
+    font-weight: 500 !important;
+}
+
 hr {
     margin-top: 15px !important;
     margin-bottom: 15px !important;
+}
+
+.top {
+    margin: 1rem 0 0 0 !important;
+}
+
+p {
+    margin: 0;
+}
+
+.score {
+    display: hidden;
 }

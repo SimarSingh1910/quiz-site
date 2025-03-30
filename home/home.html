@@ -17,36 +17,36 @@
 
 <body>
   <aside class="sidebar">
-    <div class="asideNavbar container">
-      <div class="row row-cols-1">
+    <div class="asideNavbar container gap-3">
+      <div class="row row-cols-1 gap-3">
         <div class="AsideLogo col">
           <img src="quiz-logo.jpg" alt="" class="logo">
         </div>
         <div class="col">
-          <ul>
-            <li>Sports</li>
-            <li>Movies</li>
-            <li>Music</li>
-            <li>Food and Drink</li>
-            <li>Games</li>
-            <li>Literature</li>
-            <li>History</li>
-            <li>Geography</li>
-            <li>Maths</li>
+          <ul class="ml-5">
+            <li class="p-3" id="sports">Sports</li>
+            <li class="p-3" id="movies">Movies</li>
+            <li class="p-3" id="music">Music</li>
+            <li class="p-3" id="anime">Anime</li>
+            <li class="p-3" id="video games">Video Games</li>
+            <li class="p-3" id="general knowledge">GK</li>
+            <li class="p-3" id="history">History</li>
+            <li class="p-3" id="geography">Geography</li>
+            <li class="p-3" id="celebrities">Celebrities</li>
           </ul>
         </div>
       </div>
-      <div class="row row-cols-1">
+      <div class="row row-cols-1 text-center">
         <div class="profile-container col">
           <p class="profile-name">Username</p>
           <p class="profile-email">email</p>
           <!-- logout button -->
-           <button class="logout-btn">Logout</button>
+          <button class="logout-btn">Logout</button>
         </div>
       </div>
   </aside>
 
-  <nav class="navbar">
+  <nav class="navbar rounded-pill">
     <ul>
       <li>
         <svg id="navSVG" height="30px" width="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,10 +62,10 @@
         <img src="quiz-logo.jpg" alt="" class="logo">
       </li>
       <li>
-        <a href="#" class="nav-link leaderboard">leaderboard</a>
+        <a class="nav-link username profile">Profile</a>
       </li>
       <li>
-        <a class="nav-link username profile">Profile</a>
+        <a href="#" class="nav-link leaderboard">Results</a>
       </li>
     </ul>
     <form class="search-container" action="/submit.html" method="post" onsubmit="return false">
@@ -110,19 +110,19 @@
         </div>
       </div>
       <div class="row row-cols-2 justify-content-center gap-5 mt-5 mb-5">
-        <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="foodAndDrink">
+        <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="anime">
           <div class="boder-none ">
-            <h2 class="text">Food & Drink Quiz</h2>
+            <h2 class="text">Anime Quiz</h2>
           </div>
         </div>
-        <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="games">
+        <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="video games">
           <div class="boder-none ">
-            <h2 class="text">Games Quiz</h2>
+            <h2 class="text">Video Games Quiz</h2>
           </div>
         </div>
-        <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="literature">
+        <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="general knowledge">
           <div class="boder-none ">
-            <h2 class="text">Literature Quiz</h2>
+            <h2 class="text">GK Quiz</h2>
           </div>
         </div>
       </div>
@@ -137,9 +137,9 @@
             <h2 class="text">Geography Quiz</h2>
           </div>
         </div>
-        <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="maths">
+        <div class="col-sm p-3 border rounded border-0 shadow-lg quizBox" id="celebrities">
           <div class="boder-none ">
-            <h2 class="text">Maths Quiz</h2>
+            <h2 class="text">Celebrities Quiz</h2>
           </div>
         </div>
       </div>
@@ -184,9 +184,9 @@
     explicabo aliquid quos quas nostrum animi deleniti quam, excepturi numquam omnis ea sint minus repellat debitis
     incidunt impedit voluptatem sit! Ex, tempora nisi.
   </footer>
-
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
+  <script src="../AllQuizzes/connector.js"></script>
   <script src="home_script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

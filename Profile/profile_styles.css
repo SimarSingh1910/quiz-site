@@ -1,17 +1,37 @@
---root{
---primary-color: #B06020;   /* Warm Orange */
---secondary-color: #8A4D18; /* Deep Brown-Orange */
---accent-color: #D9A441;    /* Muted Gold */
---neutral-color: #F3E1C0;   /* Warm Beige */
---contrast-color: #2F5D62;  /* Deep Teal */
+:root {
+    /* Soft Beige */
+    --bg-light: #F3E1C0;
+    /* Rich Espresso */
+    --sidebar-dark: #3E2612;
+    /* Muted Gold */
+    --navbar-gold: #D9A441;
+    /* Deep Coffee */
+    --text-dark: #8A4D18;
+    /* Burnt Orange */
+    --hover-accent: #B06020;
+    --quizbox-bg: rgb(176, 96, 32);
+    --quizbox-hover: #8A4D18;
+    --sidebar-item: rgba(255, 255, 255, 0.1);
+    --sidebar-item-hover: rgba(255, 255, 255, 0.3);
+    --primary-color: #B06020;
+    /* Warm Orange */
+    --secondary-color: #8A4D18;
+    /* Deep Brown-Orange */
+    --accent-color: #D9A441;
+    /* Muted Gold */
+    --neutral-color: #F3E1C0;
+    /* Warm Beige */
+    --contrast-color: #2F5D62;
+    /* Deep Teal */
 }
+
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: rgb(242, 239, 231);
+    background-color: var(--bg-light);
     font-family: "Comic Neue", cursive;
     font-weight: 900;
     font-style: normal;
@@ -22,13 +42,13 @@ body {
 .navbar {
     position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
+    left: 17%;
+    margin: 0 1.5% !important;
+    width: 97%;
     height: 5rem;
-    background-color:rgb(176, 96, 32);
-    color: #333333;
+    background-color: var(--navbar-gold);
+    color: var(--bg-light);
     z-index: 500;
-    margin: 0 !important;
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -36,17 +56,17 @@ body {
     box-shadow: 0px 0px 10px hsl(200, 4%, 41%) !important;
 }
 
-.logo{
+.logo {
     height: 45px;
     width: 45px;
     border-radius: 20px;
 }
 
-.navbar ul{
+.navbar ul {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 15px;
+    gap: 2rem;
     list-style: none;
     font-family: "Comic neue", serif;
     font-size: 25px;
@@ -56,76 +76,162 @@ body {
     margin-bottom: 0px !important;
 }
 
-.navbar ul li a:hover{
-    color: #DDEEFF;
+.navbar ul li a:hover {
+    color: var(--quizbox-hover);
     cursor: pointer;
 }
 
-.navbar .search-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.navbar input{
-    padding: 8px 12px;
-    border: 2px solid #B06020; 
-    border-radius: 6px;
-    font-size: 16px;
-    color: #333;  
-    background-color: #F2EFE7;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-.navbar input:focus {
-    border-color: #8A4D18; 
-    box-shadow: 0 0 5px rgba(176, 96, 32, 0.5);
-}
-
-.navbar button {
-    padding: 8px 14px;
-    font-size: 16px;
-    color: white;
-    background-color: #B06020;
-    border: 2px solid #8A4D18;
-    border-radius: 6px;
+.logo:hover {
     cursor: pointer;
+}
+
+#navSVG:hover {
+    cursor: pointer;
+}
+
+/* main form  */
+.profile-box {
+    position: relative;
+    background-color: #ffffff;
+    height: auto;
+    width: 40%;
+    border-radius: 15px;
+    box-shadow: 10px 10px 20px #0000004d;
+    top: 5rem;
+    left: 30%;
+}
+
+.header_text {
+    padding-top: 2rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #333333;
+}
+
+.input_box {
+    margin-top: 10px;
+}
+
+.submit-btn {
+    background-color: var(--quizbox-bg) !important;
+    color: var(--bg-light) !important;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid var(--quizbox-hover) !important;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
     transition: background-color 0.3s ease;
 }
 
-.navbar button:hover {
-    background-color: #8A4D18; 
+.submit-btn:hover {
+    background-color: var(--quizbox-hover) !important;
 }
 
-.red-placeholder::placeholder{
-    color: red;
+main form {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
 }
 
-#navSVG:hover{
-    cursor: pointer;
+main form input {
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+    margin-bottom: 10px;
+    border: 2px solid lightgray;
+}
+
+select {
+    color: #757575;
+}
+
+select:focus,
+select:valid {
+    color: black;
+}
+
+main form input:hover {
+    border: 2px solid black;
+}
+
+main form select {
+    padding: 10px;
+    border-radius: 5px;
+    width: 90%;
+    margin-bottom: 10px;
+    border: 2px solid lightgray;
+}
+
+main form select:hover {
+    border: 2px solid black;
+}
+
+main form label {
+    align-self: start;
+    margin-left: 2rem;
 }
 
 /* media queries for navbar */
 
 @media (max-width: 675px) {
     .search-container {
-        display:none !important;;
+        display: none !important;
+        ;
     }
 }
+
 @media (max-width: 500px) {
-    .navbar ul li a{
+    .navbar ul li a {
         display: none !important;
     }
-    .asideNavbar{
+
+    .asideNavbar {
         left: -50vw;
         width: 50vw;
     }
 }
 
 @media (max-width: 768px) and (min-width:500px) {
-    .asideNavbar{
+    .asideNavbar {
         left: -25vw;
         width: 25vw;
     }
+}
+
+/* Optional: Customize scrollbar */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--navbar-gold);
+    /* Scrollbar color */
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(19, 19, 19, 0.33);
+}
+
+/* Optional: Customize scrollbar */
+.sidebar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: var(--navbar-gold);
+    /* Scrollbar color */
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
 }
