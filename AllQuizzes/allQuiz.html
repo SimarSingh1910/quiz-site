@@ -22,221 +22,30 @@
                             <hr class="border border-2 border-secondary rounded-pill">
                         </div>
 
-                        <!-- Question 1 -->
-                        <div class="col q1 text-start">
-                            <h2>Question 1.</h2>
-                            <h3 class="question-0"></h3>
-                            <div class="container-fluid">
-                                <input type="radio" name="answer0" id="answer0-1" value="option1">
-                                <label for="answer0-1" id="LabelAnswer0-1"></label><br>
-                                <input type="radio" name="answer0" id="answer0-2" value="option2">
-                                <label for="answer0-2" id="LabelAnswer0-2"></label><br>
-                                <input type="radio" name="answer0" id="answer0-3" value="option3">
-                                <label for="answer0-3" id="LabelAnswer0-3"></label><br>
-                                <input type="radio" name="answer0" id="answer0-4" value="option4">
-                                <label for="answer0-4" id="LabelAnswer0-4"></label><br>
-                            </div>
-                            <!-- answer display -->
-                            <p class="top" id="answer0"></p>
-                            <p id="correctAnswer0"></p>
-                            <p id="feedback0"></p>
+                        <div class="col mb-3">
+                            <label for="numQuestions">Enter Number of Questions:</label>
+                            <input type="number" id="numQuestions" min="1" max="50">
+                        </div>
+                        <!-- difficulty of questions -->
+                        <div class="col ">
+                            <label for="difficulty">Select Difficulty:</label>
+                            <select id="difficulty">
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select><br>
+                            <button class="mt-3"id="generate">Give me Questions</button>
                             <hr class="border border-2 border-secondary rounded-pill">
                         </div>
-
-                        <!-- Question 2 -->
-                        <div class="col q2 text-start">
-                            <h2>Question 2.</h2>
-                            <h3 class="question-1"></h3>
-                            <div class="container-fluid">
-                                <input type="radio" name="answer1" id="answer1-1" value="option1">
-                                <label for="answer1-1" id="LabelAnswer1-1"></label><br>
-                                <input type="radio" name="answer1" id="answer1-2" value="option2">
-                                <label for="answer1-2" id="LabelAnswer1-2"></label><br>
-                                <input type="radio" name="answer1" id="answer1-3" value="option3">
-                                <label for="answer1-3" id="LabelAnswer1-3"></label><br>
-                                <input type="radio" name="answer1" id="answer1-4" value="option4">
-                                <label for="answer1-4" id="LabelAnswer1-4"></label><br>
-                            </div>
-                            <!-- answer display -->
-                            <p class="top" id="answer1"></p>
-                            <p id="correctAnswer1"></p>
-                            <p id="feedback1"></p>
-                            <hr class="border border-2 border-secondary rounded-pill">
-                        </div>
-
-                        <!-- Question 3 -->
-                        <div class="col q3 text-start">
-                            <h2>Question 3.</h2>
-                            <h3 class="question-2"></h3>
-                            <div class="container-fluid">
-                                <input type="radio" name="answer2" id="answer2-1" value="option1">
-                                <label for="answer2-1" id="LabelAnswer2-1"></label><br>
-                                <input type="radio" name="answer2" id="answer2-2" value="option2">
-                                <label for="answer2-2" id="LabelAnswer2-2"></label><br>
-                                <input type="radio" name="answer2" id="answer2-3" value="option3">
-                                <label for="answer2-3" id="LabelAnswer2-3"></label><br>
-                                <input type="radio" name="answer2" id="answer2-4" value="option4">
-                                <label for="answer2-4" id="LabelAnswer2-4"></label><br>
-                            </div>
-                            <!-- answer display -->
-                            <p class="top" id="answer2"></p>
-                            <p id="correctAnswer2"></p>
-                            <p id="feedback2"></p>
-                            <hr class="border border-2 border-secondary rounded-pill">
-                        </div>
-
-                        <!-- Question 4 -->
-                        <div class="col q4 text-start">
-                            <h2>Question 4.</h2>
-                            <h3 class="question-3"></h3>
-                            <div class="container-fluid">
-                                <input type="radio" name="answer3" id="answer3-1" value="option1">
-                                <label for="answer3-1" id="LabelAnswer3-1"></label><br>
-                                <input type="radio" name="answer3" id="answer3-2" value="option2">
-                                <label for="answer3-2" id="LabelAnswer3-2"></label><br>
-                                <input type="radio" name="answer3" id="answer3-3" value="option3">
-                                <label for="answer3-3" id="LabelAnswer3-3"></label><br>
-                                <input type="radio" name="answer3" id="answer3-4" value="option4">
-                                <label for="answer3-4" id="LabelAnswer3-4"></label><br>
-                            </div>
-                            <!-- answer display -->
-                            <p class="top" id="answer3"></p>
-                            <p id="correctAnswer3"></p>
-                            <p id="feedback3"></p>
-                            <hr class="border border-2 border-secondary rounded-pill">
-                        </div>
-
-                        <!-- Question 5 -->
-                        <div class="col q5 text-start">
-                            <h2>Question 5.</h2>
-                            <h3 class="question-4"></h3>
-                            <div class="container-fluid">
-                                <input type="radio" name="answer4" id="answer4-1" value="option1">
-                                <label for="answer4-1" id="LabelAnswer4-1"></label><br>
-                                <input type="radio" name="answer4" id="answer4-2" value="option2">
-                                <label for="answer4-2" id="LabelAnswer4-2"></label><br>
-                                <input type="radio" name="answer4" id="answer4-3" value="option3">
-                                <label for="answer4-3" id="LabelAnswer4-3"></label><br>
-                                <input type="radio" name="answer4" id="answer4-4" value="option4">
-                                <label for="answer4-4" id="LabelAnswer4-4"></label><br>
-                            </div>
-                            <!-- answer display -->
-                            <p class="top" id="answer4"></p>
-                            <p id="correctAnswer4"></p>
-                            <p id="feedback4"></p>
-                            <hr class="border border-2 border-secondary rounded-pill">
-                        </div>
-
-                        <!-- Question 6 -->
-                        <div class="col q6 text-start">
-                            <h2>Question 6.</h2>
-                            <h3 class="question-5"></h3>
-                            <div class="container-fluid">
-                                <input type="radio" name="answer5" id="answer5-1" value="option1">
-                                <label for="answer5-1" id="LabelAnswer5-1"></label><br>
-                                <input type="radio" name="answer5" id="answer5-2" value="option2">
-                                <label for="answer5-2" id="LabelAnswer5-2"></label><br>
-                                <input type="radio" name="answer5" id="answer5-3" value="option3">
-                                <label for="answer5-3" id="LabelAnswer5-3"></label><br>
-                                <input type="radio" name="answer5" id="answer5-4" value="option4">
-                                <label for="answer5-4" id="LabelAnswer5-4"></label><br>
-                            </div>
-                            <!-- answer display -->
-                            <p class="top" id="answer5"></p>
-                            <p id="correctAnswer5"></p>
-                            <p id="feedback5"></p>
-                            <hr class="border border-2 border-secondary rounded-pill">
-                        </div>
-
-                        <!-- Question 7 -->
-                        <div class="col q7 text-start">
-                            <h2 class="text-start">Question 7.</h2>
-                            <h3 class="text-start question-6"></h3>
-                            <div class="container-fluid text-start">
-                                <input type="radio" name="answer6" id="answer6-1" value="option1">
-                                <label for="answer6-1" id="LabelAnswer6-1"></label><br>
-                                <input type="radio" name="answer6" id="answer6-2" value="option2">
-                                <label for="answer6-2" id="LabelAnswer6-2"></label><br>
-                                <input type="radio" name="answer6" id="answer6-3" value="option3">
-                                <label for="answer6-3" id="LabelAnswer6-3"></label><br>
-                                <input type="radio" name="answer6" id="answer6-4" value="option4">
-                                <label for="answer6-4" id="LabelAnswer6-4"></label><br>
-                            </div>
-                            <!-- answer display -->
-                            <p class="top" id="answer6"></p>
-                            <p id="correctAnswer6"></p>
-                            <p id="feedback6"></p>
-                            <hr class="border border-2 border-secondary rounded-pill">
-                        </div>
-
-                        <!-- Question 8 -->
-                        <div class="col q8 text-start">
-                            <h2>Question 8.</h2>
-                            <h3 class="question-7"></h3>
-                            <div class="container-fluid">
-                                <input type="radio" name="answer7" id="answer7-1" value="option1">
-                                <label for="answer7-1" id="LabelAnswer7-1"></label><br>
-                                <input type="radio" name="answer7" id="answer7-2" value="option2">
-                                <label for="answer7-2" id="LabelAnswer7-2"></label><br>
-                                <input type="radio" name="answer7" id="answer7-3" value="option3">
-                                <label for="answer7-3" id="LabelAnswer7-3"></label><br>
-                                <input type="radio" name="answer7" id="answer7-4" value="option4">
-                                <label for="answer7-4" id="LabelAnswer7-4"></label><br>
-                            </div>
-                            <!-- answer display -->
-                            <p class="top" id="answer7"></p>
-                            <p id="correctAnswer7"></p>
-                            <p id="feedback7"></p>
-                            <hr class="border border-2 border-secondary rounded-pill">
-                        </div>
-
-                        <!-- Question 9 -->
-                        <div class="col q9 text-start">
-                            <h2>Question 9.</h2>
-                            <h3 class="question-8"></h3>
-                            <div class="container-fluid">
-                                <input type="radio" name="answer8" id="answer8-1" value="option1">
-                                <label for="answer8-1" id="LabelAnswer8-1"></label><br>
-                                <input type="radio" name="answer8" id="answer8-2" value="option2">
-                                <label for="answer8-2" id="LabelAnswer8-2"></label><br>
-                                <input type="radio" name="answer8" id="answer8-3" value="option3">
-                                <label for="answer8-3" id="LabelAnswer8-3"></label><br>
-                                <input type="radio" name="answer8" id="answer8-4" value="option4">
-                                <label for="answer8-4" id="LabelAnswer8-4"></label><br>
-                            </div>
-                            <!-- answer display -->
-                            <p class="top" id="answer8"></p>
-                            <p id="correctAnswer8"></p>
-                            <p id="feedback8"></p>
-                            <hr class="border border-2 border-secondary rounded-pill">
-                        </div>
-
-                        <!-- Question 10 -->
-                        <div class="col q10 text-start">
-                            <h2>Question 10.</h2>
-                            <h3 class="question-9"></h3>
-                            <div class="container-fluid">
-                                <input type="radio" name="answer9" id="answer9-1" value="option1">
-                                <label for="answer9-1" id="LabelAnswer9-1"></label><br>
-                                <input type="radio" name="answer9" id="answer9-2" value="option2">
-                                <label for="answer9-2" id="LabelAnswer9-2"></label><br>
-                                <input type="radio" name="answer9" id="answer9-3" value="option3">
-                                <label for="answer9-3" id="LabelAnswer9-3"></label><br>
-                                <input type="radio" name="answer9" id="answer9-4" value="option4">
-                                <label for="answer9-4" id="LabelAnswer9-4"></label><br>
-                            </div>
-                            <!-- answer display -->
-                            <p class="top" id="answer9"></p>
-                            <p id="correctAnswer9"></p>
-                            <p id="feedback9"></p>
-                            <hr class="border border-2 border-secondary rounded-pill">
-                        </div>
+                    </div>
+                    <div class="row row-cols-1 text-center question-form"></div>
+                    <div class="row row-cols-1 text-center score-submit">
                         <!-- Score display -->
-                         <div class="col-md-12 mb-2 mt-2 text-center score">
+                        <div class="col-md-12 mb-2 mt-2 text-center score">
                             <p id="score"></p>
                         </div>
                         <!-- Submit Button -->
-                        <div class="col-md-12 mb-4 mt-4 text-center">
+                        <div class="col-md-12 mb-4 mt-4 text-center submit">
                             <button type="submit" class="btn btn-primary btn-lg">Submit</button>
                         </div>
                     </div>

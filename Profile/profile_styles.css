@@ -40,9 +40,8 @@ body {
 /*--------navbar---------- */
 
 .navbar {
-    position: sticky;
-    top: 0;
-    left: 17%;
+    position:absolute;;
+    top: 1rem;
     margin: 0 1.5% !important;
     width: 97%;
     height: 5rem;
@@ -97,7 +96,7 @@ body {
     width: 40%;
     border-radius: 15px;
     box-shadow: 10px 10px 20px #0000004d;
-    top: 5rem;
+    top: 8rem;
     left: 30%;
 }
 
