@@ -56,5 +56,24 @@ p {
 }
 
 .score {
-    display: hidden;
+    display: none;
+}
+
+.submit {
+    display: none;
+}
+
+.col button {
+    padding: 8px 14px;
+    font-size: 16px;
+    color: #F3E1C0;
+    background-color: #B06020;
+    border: 2px solid #8A4D18;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.col button:hover {
+    background-color: #8A4D18;
 }

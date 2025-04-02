@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="signup_styles.css">
+    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
 </head>
 
 <body>
@@ -15,7 +16,7 @@
                 <p>Sign up</p>
             </div>
             <div class="input_box">
-                <form class="signup_form" action="index.php" method="POST">
+                <form class="signup_form" action="signup_script.js" method="POST">
                     <input type="text" class="input-box" id="gmail_input" name="gmail" placeholder="Gmail">
                     <input type="text" class="input-box" id="username_input" name="username" placeholder="Username">
                     <input type="password" class="input-box" id="password_input" name="password"
@@ -44,7 +45,9 @@
         <!-- <img class="ovs" src="ovs.png" alt="online voting system"> -->
     </div>
 
-    <script src="signup_script.js"></script>
+    <script type="module" src="../supabase/supabaseClient.js"></script>
+    <script type="module" src="signup_script.js"></script>
+
 </body>
 
 </html>

@@ -108,10 +108,18 @@ $(document).ready(function () {
     $(".profile").on("click", function () {
         if (window.userSession && window.userSession.user) {
             console.log("User profile page");
-            window.location.href = "/Quiz-website/Profile/profile.html";
+            window.location.href = "/Quiz-Website/Profile/profile.html";
         } else {
             console.log("User not logged in.");
             window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
+        }
+    });
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 50) {
+            $(".navbar").addClass("sticky");
+        } else {
+            $(".navbar").removeClass("sticky");
         }
     });
 });

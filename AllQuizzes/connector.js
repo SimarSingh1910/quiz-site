@@ -13,6 +13,7 @@ $(document).ready(function () {
         switch (SearchValue) {
             case "":
                 searchBox.attr("placeholder", "Field is empty").addClass("red-placeholder");
+                category = "";
                 break;
             case "sports":
                 category = categoryArray[0];
