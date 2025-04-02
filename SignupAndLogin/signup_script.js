@@ -1,4 +1,4 @@
-import { supabase } from '../supabase/supabaseClient';
+import { supabase } from '../supabase/supabaseClient.js'; 
 
 // Check if user is already logged in
 document.addEventListener("DOMContentLoaded", async () => {
@@ -110,3 +110,5 @@ const toEmpty = () => {
     passwordInput.value = "";
     confirmPasswordInput.value = "";
 };
+
+console.log("script is running!");

@@ -15,7 +15,7 @@
                 <p>Log in</p>
             </div>
             <div class="input_box">
-                <form action="login.php" method="post">
+                <form action="login_script.js" method="post">
                     <input type="text" class="input-box username_input" id="username_input_login" name="username_login"
                         placeholder="Username">
                     <input type="password" class="input-box password_input" id="password_input_login"
@@ -41,7 +41,8 @@
     </div>
     <div class="rightsidebox"></div>
     
-    <script src="login_script.js"></script>
+    <script type="module" src="login_script.js"></script>
+    <script type="module" src=" ../supabase/supabaseClient.js"></script>
 </body>
 
 </html>
