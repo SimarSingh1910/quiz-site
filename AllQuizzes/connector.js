@@ -49,7 +49,7 @@ $(document).ready(function () {
         }
         if (category !== "") {
             localStorage.setItem("selectedCategory", category); // Store category in localStorage
-            window.location.href = "/Quiz-Website/AllQuizzes/allQuiz.html"; // Redirect
+            window.location.href = "../AllQuizzes/allQuiz.html"; // Redirect
         }
     }
 
