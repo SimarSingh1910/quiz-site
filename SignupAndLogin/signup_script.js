@@ -30,6 +30,15 @@ async function signUpUser() {
         showError("Passwords do not match.");
         return;
     }
+    // check if username is unique
+    const { data: user,logicError } = await supabase
+        .from('profiles')
+       .select('username')
+       .eq('username', username);
+    if (error || user.length > 0) {
+        showError("Username already exists.");
+        return;
+    }
     const { data, error } = await supabase.auth.signUp({
         email: gmail,
         password: password,
@@ -37,6 +46,8 @@ async function signUpUser() {
     if (error) {
         showError(error.message);
     } else {
+        window.localStorage.setItem('username', username);
+        window.localStorage.setItem('gmail', gmail);
         const { error } = await supabase
             .from('profiles')
             .insert({

@@ -21,9 +21,7 @@ function validateForm() {
 
 //funciton to login using supabase
 async function UsernameLogin (username, password) {
-    // let incorrect = document.getElementById("#incorrect_text_login");
-    // let incorrect_box = document.getElementById("incorrect_password_login");
-
+    
     try{
         const {data: user, error} = await supabase.from("profiles").select("email").eq("username", username).single();
 
@@ -44,7 +42,8 @@ async function UsernameLogin (username, password) {
             incorrect.textContent = "username or password is not correct!";
             return;
         }
-
+        window.localStorage.setItem('username', username);
+        window.localStorage.setItem('gmail', user.email);
         //redirecting after login
         console.log("login successful!");
         window.location.href = redirectURL;

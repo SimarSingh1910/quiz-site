@@ -15,9 +15,6 @@ async function fetching(URL) {
     let response = await fetch(URL);
     let data = await response.json();
     results = data.results;
-    // console.log(response);
-    // console.log(data);
-    // console.log(results);
     correctAnswers = results.map(result => result.correct_answer);
     QuesDisplay();
     AnswerDisplay();

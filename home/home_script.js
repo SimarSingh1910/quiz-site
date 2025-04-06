@@ -1,41 +1,43 @@
-// import { supabase } from '../supabase/supabaseClient';
+import { supabase } from '../supabase/supabaseClient.js';
 
+const username = localStorage.getItem('username');
+const gmail = localStorage.getItem('gmail');
 const getUser = async () => {
-  const { data: user, error } = await supabase.auth.getUser();
-  if (error) console.error('User Fetch Error:', error);
-  else console.log('User:', user);
+    const { data: user, error } = await supabase.auth.getUser();
+    if (error) console.error('User Fetch Error:', error);
+    else console.log('User:', user);
 };
-
-// fetch('home.php')
-//     .then((response) => {
-//         if (!response.ok) {
-//             throw new Error(`HTTP error! Status: ${response.status}`);
-//         }
-//         // console.log(response);
-//         return response.json(); // Parse JSON only if response is valid
-//     })
-//     .then((sessionData) => {
-//         console.log(sessionData);
-//         window.userSession = sessionData;
-//         // user profile in aside navbar
-//         let username = document.querySelector('.profile-name');
-//         let useremail = document.querySelector('.profile-email');
-//         let logout = document.querySelector('.logout-btn');
-//         if (window.userSession && window.userSession.user) {
-//             username.textContent = window.userSession.user.name;
-//             useremail.textContent = window.userSession.user.email;
-//         }
-//         else {
-//             username.textContent = "Guest";
-//             useremail.textContent = "";
-//             logout.textContent = "Login";
-//             logout.classList.add("signup");
-//             console.log("login button");
-//         }
-//     })
-//     .catch(error => console.error('Error fetching session data:', error));
+// see if local storage has username and gmail
 
 $(document).ready(function () {
+    if (username && gmail) {
+        $(".profile-name").text(username);
+        // $(".profile-email").text(gmail);
+        $(".logout-btn").text("Logout");
+        getUser();
+    }
+    else {
+        $(".profile-name").text("Guest");
+        $(".profile-email").text("");
+        $(".logout-btn").text("Log In");
+        $(".logout-btn").addClass("login");
+    }
+    
+    // logout 
+    $(".logout-btn").click(async function (e) {
+        e.preventDefault();
+        if ($(this).hasClass("login")) {
+            console.log("User not logged in.");
+            window.location.href = "../SignupAndLogin/login.html";
+        }
+        else {
+            const { error } = await supabase.auth.signOut()
+            if (error) console.error('Logout Error:', error);
+            localStorage.removeItem('username');
+            localStorage.removeItem('gmail');
+            window.location.href = '../home/home.html';
+        }
+    });
     //aside navbar
     function displayAside() {
         $(".asideNavbar").toggleClass("showAside");
@@ -75,51 +77,15 @@ $(document).ready(function () {
 
 
     $("#navSVG").on("click", displayAside);
-    // USER LOGIN
-    $(document).on("click", ".login", function (event) {
-        event.preventDefault();
-        console.log("User login page");
-        window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
-    });
-
-    // USER LOGOUT
-    $(".logout-btn").on("click", function (event) {
-        event.preventDefault(); // Prevent default button behavior
-
-        console.log("Logging out...");
-
-        // Clear session storage and local storage
-        localStorage.removeItem('userSession');
-        localStorage.removeItem('quizHistory');
-        sessionStorage.removeItem('userSession');
-
-        // Make sure logout request is completed before redirecting
-        fetch('logout.php', { method: 'POST' })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error("Logout request failed");
-                }
-                console.log("User logged out successfully");
-                return response.text(); // Read the response to avoid fetch errors
-            })
-            .then(() => {
-                // Redirect to login page
-                window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
-            })
-            .catch(error => {
-                console.error("Logout failed:", error);
-                alert("Logout failed. Please try again.");
-            });
-    });
 
     //user profile
     $(".profile").on("click", function () {
-        if (window.userSession && window.userSession.user) {
+        if (username && gmail) {
             console.log("User profile page");
-            window.location.href = "/Quiz-Website/Profile/profile.html";
+            window.location.href = "../Profile/profile.html";
         } else {
             console.log("User not logged in.");
-            window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
+            window.location.href = "../SignupAndLogin/login.html";
         }
     });
 
