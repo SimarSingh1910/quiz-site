@@ -1,39 +1,10 @@
-// import { supabase } from '../supabase/supabaseClient';
+// import { supabase } from '../supabase/supabaseClient.js';
 
 const getUser = async () => {
   const { data: user, error } = await supabase.auth.getUser();
   if (error) console.error('User Fetch Error:', error);
   else console.log('User:', user);
 };
-
-// fetch('home.php')
-//     .then((response) => {
-//         if (!response.ok) {
-//             throw new Error(`HTTP error! Status: ${response.status}`);
-//         }
-//         // console.log(response);
-//         return response.json(); // Parse JSON only if response is valid
-//     })
-//     .then((sessionData) => {
-//         console.log(sessionData);
-//         window.userSession = sessionData;
-//         // user profile in aside navbar
-//         let username = document.querySelector('.profile-name');
-//         let useremail = document.querySelector('.profile-email');
-//         let logout = document.querySelector('.logout-btn');
-//         if (window.userSession && window.userSession.user) {
-//             username.textContent = window.userSession.user.name;
-//             useremail.textContent = window.userSession.user.email;
-//         }
-//         else {
-//             username.textContent = "Guest";
-//             useremail.textContent = "";
-//             logout.textContent = "Login";
-//             logout.classList.add("signup");
-//             console.log("login button");
-//         }
-//     })
-//     .catch(error => console.error('Error fetching session data:', error));
 
 $(document).ready(function () {
     //aside navbar

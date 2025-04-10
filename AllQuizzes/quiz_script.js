@@ -1,3 +1,11 @@
+// import { supabase } from "../supabase/supabaseClient.js";
+
+// const getUser = async () => {
+//     const { data: user, error } = await supabase.auth.getUser();
+//     if (error) console.error('User Fetch Error:', error);
+//     else console.log('User:', user);
+//   };
+
 console.log("starting");
 let quiz_category = localStorage.getItem("selectedCategory");
 let results = [];
@@ -25,7 +33,7 @@ async function fetching(URL) {
 
 // display questions in DOM elements
 function QuesDisplay() {
-    for (ques in results) {
+    for (let ques in results) {
         let question = document.querySelector(`.question-${ques}`);
         question.textContent = decodeHtmlEntities(results[ques].question);
     }
@@ -33,7 +41,7 @@ function QuesDisplay() {
 
 // display answers in DOM elements in radio buttons and labels 4 at a time, with random order
 function AnswerDisplay() {
-    for (ques in results) {
+    for (let ques in results) {
         let answerArray = results[ques].incorrect_answers.concat(results[ques].correct_answer);
         answerArray.sort(() => Math.random() - 0.5);
         for (let i = 0; i < 4; i++) {
