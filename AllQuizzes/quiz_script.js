@@ -1,7 +1,11 @@
-console.log("starting");
+import { supabase } from '../supabase/supabaseClient.js';
+
+const username = localStorage.getItem('username');
 let quiz_category = localStorage.getItem("selectedCategory");
 let results = [];
 let correctAnswers = [];
+let difficulty;
+let numQuestions;
 
 // decode HTML entities function
 function decodeHtmlEntities(text) {
@@ -22,7 +26,7 @@ async function fetching(URL) {
 
 // display questions in DOM elements
 function QuesDisplay() {
-    for (ques in results) {
+    for (let ques in results) {
         let question = document.querySelector(`.question-${ques}`);
         question.textContent = decodeHtmlEntities(results[ques].question);
     }
@@ -30,7 +34,7 @@ function QuesDisplay() {
 
 // display answers in DOM elements in radio buttons and labels 4 at a time, with random order
 function AnswerDisplay() {
-    for (ques in results) {
+    for (let ques in results) {
         let answerArray = results[ques].incorrect_answers.concat(results[ques].correct_answer);
         answerArray.sort(() => Math.random() - 0.5);
         for (let i = 0; i < 4; i++) {
@@ -44,10 +48,14 @@ function AnswerDisplay() {
 
 
 // submit button functionality
-document.querySelector(".btn").addEventListener("click", () => {
+document.querySelector(".btn").addEventListener("click", async () => {
     console.log("button clicked");
     let score = 0;
     for (let ques in results) {
+        let userAnswers = [];
+        for (let i = 1; i <= 4; i++) {
+            userAnswers.push(document.querySelector(`input[name="answer${ques}"]:checked`).value);
+        }
         let userAnswer = document.querySelector(`input[name="answer${ques}"]:checked`).value;
         $(`#answer${ques}`).text(`Your Answer : ${userAnswer}`);
         $(`#correctAnswer${ques}`).text(`Correct Answer : ${correctAnswers[ques]}`);
@@ -67,13 +75,25 @@ document.querySelector(".btn").addEventListener("click", () => {
     }
     $(".score").css("display", "block");
     $("#score").text(`Your Score is ${score}`);
+    const { error } = await supabase
+                .from('results')
+                .insert({
+                    username: username, 
+                    category: quiz_category,
+                    level:difficulty,
+                    score:score,
+                    questions:numQuestions
+                });
+            if (error) {
+                console.log(error);   
+            }
 });
 $(document).ready(function () {
     $("#generate").click(function (event) {
         event.preventDefault();
         console.log("Generating quiz...");
-        let numQuestions = $("#numQuestions").val();
-        let difficulty = $("#difficulty").val();
+        numQuestions = $("#numQuestions").val();
+        difficulty = $("#difficulty").val();
         let container = $(".question-form");
         container.empty(); // Clear previous questions
 
