@@ -84,6 +84,22 @@ body {
     cursor: pointer;
 }
 
+.navbar button {
+    margin-right: 2rem;
+    padding: 8px 14px;
+    font-size: 18px;
+    color: white;
+    background-color: #B06020;
+    border: 2px solid #8A4D18;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #8A4D18;
+}
+
 #navSVG:hover {
     cursor: pointer;
 }
