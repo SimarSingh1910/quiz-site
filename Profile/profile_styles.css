@@ -1,28 +1,13 @@
 :root {
-    /* Soft Beige */
-    --bg-light: #F3E1C0;
-    /* Rich Espresso */
+    --bg-light: #f4f7fa;
     --sidebar-dark: #3E2612;
-    /* Muted Gold */
-    --navbar-gold: #D9A441;
-    /* Deep Coffee */
-    --text-dark: #8A4D18;
-    /* Burnt Orange */
-    --hover-accent: #B06020;
-    --quizbox-bg: rgb(176, 96, 32);
-    --quizbox-hover: #8A4D18;
+    --navbar-gold: #2b2d42;
+    --text-dark: #1c1c1c;
+    --hover-accent: #3a86ff;
+    --quizbox-bg: #8ecae6;
+    --quizbox-hover: #219ebc;
     --sidebar-item: rgba(255, 255, 255, 0.1);
     --sidebar-item-hover: rgba(255, 255, 255, 0.3);
-    --primary-color: #B06020;
-    /* Warm Orange */
-    --secondary-color: #8A4D18;
-    /* Deep Brown-Orange */
-    --accent-color: #D9A441;
-    /* Muted Gold */
-    --neutral-color: #F3E1C0;
-    /* Warm Beige */
-    --contrast-color: #2F5D62;
-    /* Deep Teal */
 }
 
 * {
@@ -40,7 +25,8 @@ body {
 /*--------navbar---------- */
 
 .navbar {
-    position:absolute;;
+    position: absolute;
+    ;
     top: 1rem;
     margin: 0 1.5% !important;
     width: 97%;
@@ -65,7 +51,7 @@ body {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     list-style: none;
     font-family: "Comic neue", serif;
     font-size: 25px;
@@ -89,15 +75,16 @@ body {
     padding: 8px 14px;
     font-size: 18px;
     color: white;
-    background-color: #B06020;
-    border: 2px solid #8A4D18;
+    background-color:var(--quizbox-bg);
+    border: 2px solid var(--quizbox-hover);
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
 .navbar button:hover {
-    background-color: #8A4D18;
+    background-color: var(--quizbox-hover);
 }
 
 #navSVG:hover {

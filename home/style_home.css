@@ -1,18 +1,19 @@
 :root {
-    /* Soft Beige */
-    --bg-light: #F3E1C0;
-    /* Rich Espresso */
+    --bg-light: #f4f7fa;
     --sidebar-dark: #3E2612;
-    /* Muted Gold */
-    --navbar-gold: #D9A441;
-    /* Deep Coffee */
-    --text-dark: #8A4D18;
-    /* Burnt Orange */
-    --hover-accent: #B06020;
-    --quizbox-bg: rgb(176, 96, 32);
-    --quizbox-hover: #8A4D18;
+    --navbar-gold: #2b2d42;
+    --text-dark: #1c1c1c;
+    --hover-accent: #3a86ff;
+    --quizbox-bg: #8ecae6;
+    --quizbox-hover: #219ebc;
     --sidebar-item: rgba(255, 255, 255, 0.1);
     --sidebar-item-hover: rgba(255, 255, 255, 0.3);
+    --bg-color: #f4f7fa;
+    --primary: #2b2d42;
+    --secondary: #3a86ff;
+    --card-bg: #8ecae6;
+    --text: #1c1c1c;
+    --hover: #219ebc;
 }
 
 * {
@@ -119,16 +120,15 @@ body::-webkit-scrollbar-track {
     padding: 8px 14px;
     font-size: 16px;
     color: white;
-    background-color: #B06020;
-    border: 2px solid #8A4D18;
+    background-color: var(--quizbox-bg);
+    border: 2px solid var(--quizbox-hover);
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .navbar button:hover {
-    background-color: #8A4D18;
-}
+    background-color: var(--quizbox-hover)}
 
 .red-placeholder::placeholder {
     color: red;
@@ -147,7 +147,7 @@ body::-webkit-scrollbar-track {
     width: 15vw;
     margin: 0 !important;
     padding: 0 !important;
-    background-color: var(--sidebar-dark);
+    background-color: var(--navbar-gold);
     color: var(--bg-light);
     border-right: 2px solid black;
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
@@ -208,22 +208,21 @@ body::-webkit-scrollbar-track {
     padding: 8px 14px;
     font-size: 16px;
     color: white;
-    background-color: #B06020;
-    border: 2px solid #8A4D18;
+    background-color: var(--quizbox-bg);
+    border: 2px solid var(--quizbox-hover);
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .logout-btn:hover {
-    background-color: #8A4D18;
+    background-color:var(--quizbox-hover);
 }
 
 /* quiz templates */
 
 .col-sm {
-    /* background-color: #ffffff; */
-    background-color: rgb(176, 96, 32);
+    background-color: var(--quizbox-bg);
     box-shadow: 4px 4px 10px hsl(200, 4%, 41%) !important;
     transition: background-color 0.3s ease;
     height: 150px;
@@ -233,8 +232,7 @@ body::-webkit-scrollbar-track {
 }
 
 .col-sm:hover {
-    /* background-color: rgba(211, 211, 211, 0.848); */
-    background-color: #8A4D18;
+    background-color: var(--quizbox-hover);
     box-shadow: 4px 4px 14px hsl(200, 4%, 31%) !important;
     cursor: pointer;
     transform: scale(1.03);

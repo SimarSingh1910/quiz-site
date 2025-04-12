@@ -1,11 +1,11 @@
 :root {
-    --bg-light: #F3E1C0;
+    --bg-light: #f4f7fa;
     --sidebar-dark: #3E2612;
-    --navbar-gold: #D9A441;
-    --text-dark: #8A4D18;
-    --hover-accent: #B06020;
-    --quizbox-bg: rgb(176, 96, 32);
-    --quizbox-hover: #8A4D18;
+    --navbar-gold: #2b2d42;
+    --text-dark: #1c1c1c;
+    --hover-accent: #3a86ff;
+    --quizbox-bg: #8ecae6;
+    --quizbox-hover: #219ebc;
     --sidebar-item: rgba(255, 255, 255, 0.1);
     --sidebar-item-hover: rgba(255, 255, 255, 0.3);
 }
@@ -66,14 +66,14 @@ p {
 .col button {
     padding: 8px 14px;
     font-size: 16px;
-    color: #F3E1C0;
-    background-color: #B06020;
-    border: 2px solid #8A4D18;
+    color: var(--text-dark);
+    background-color:var(--quizbox-bg);
+    border: 1px solid var(--quizbox-hover);
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .col button:hover {
-    background-color: #8A4D18;
+    background-color: var(--quizbox-hover);
 }
