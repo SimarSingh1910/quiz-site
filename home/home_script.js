@@ -1,3 +1,4 @@
+// import { supabase } from '../supabase/supabaseClient.js';
 import { supabase } from '../supabase/supabaseClient.js';
 
 const username = localStorage.getItem('username');
@@ -7,7 +8,6 @@ const getUser = async () => {
     if (error) console.error('User Fetch Error:', error);
     else console.log('User:', user);
 };
-// see if local storage has username and gmail
 
 $(document).ready(function () {
     if (username && gmail) {
