@@ -35,7 +35,8 @@ async function signUpUser() {
         .from('profiles')
        .select('username')
        .eq('username', username);
-    if (error || user.length > 0) {
+    if (user.length > 0) {
+        console.error('Error fetching username:', logicError);
         showError("Username already exists.");
         return;
     }

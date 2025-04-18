@@ -78,9 +78,10 @@ $(document).ready(function () {
 
     $("#navSVG").on("click", displayAside);
 
-    //user profile
-    $(".profile").on("click", function () {
-        if (username && gmail) {
+    //user profile page
+    $(".profile").on("click", function (e) {
+        e.preventDefault();
+        if ($(".profile-name").text() !== "Guest") {
             console.log("User profile page");
             window.location.href = "../Profile/profile.html";
         } else {
