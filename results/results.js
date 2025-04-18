@@ -25,4 +25,33 @@ const getUser = async () => {
               $(".navbar").removeClass("sticky");
           }
       });
+
+
+
+
+    //   realtime function of results table 
+    const tableBody = $(".tableBody");
+    const username = $("")
+
+    function addRowToTable(data) {
+        const newRow = tableBody.insertRow(); // create a new <tr>
+        Object.values(data).forEach(value => {
+          const newCell = newRow.insertCell(); // create a new <td>
+          newCell.textContent = value;         // set the value
+        });
+      }
+
+      async function fetchAndDisplayData() {
+        const { data, error } = await supabase.from('results').select().eq('username',username);
+        if (error) {
+          console.error('Error fetching data:', error);
+          return;
+        }
+      
+        data.forEach(row => addRowToTable(row));
+      }
+      
+      fetchAndDisplayData();
+
   });
+
