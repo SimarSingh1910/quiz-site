@@ -1,132 +1,103 @@
-import { supabase } from '../supabase/supabaseClient';
+import { supabase } from '../supabase/supabaseClient.js';
 
-const updateUserProfile = (user) => {
-    if (!user) {
-        console.warn("No user session found.");
-        return;
-    }
+const username = localStorage.getItem('username');
+const gmail = localStorage.getItem('gmail');
 
-    // Select UI elements
-    let usernameElement = document.querySelector('.profile-name');
-    let useremailElement = document.querySelector('.profile-email');
-
-    // Fetch user data from Supabase profiles table
-    supabase
+// Fetch user data from Supabase
+const getUser = async () => {
+    const { data, error } = await supabase
         .from('profiles')
-        .select('name, email')
-        .eq('id', user.id)
-        .single()
-        .then(({ data, error }) => {
-            if (error) {
-                console.error("Error fetching profile data:", error);
-                return;
-            }
-            // Update UI with fetched user data
-            if (data) {
-                usernameElement.textContent = data.name || "No Name";
-                useremailElement.textContent = data.email || "No Email";
-            }
-        });
-};
-
-
-const fetchSession = async () => {
-    const { data, error } = await supabase.auth.getSession();
+        .select()
+        .eq('username', username)
+        .single();
 
     if (error) {
-        console.error("Error fetching session data:", error);
-    } else if (data.session && data.session.user) {
-        console.log("User session:", data.session.user);
-        updateUserProfile(data.session.user); 
-    } else {
-        console.log("No active session.");
+        console.error('Error fetching user:', error.message);
+        return null;
     }
+    return data;
 };
 
-fetchSession();
-
-// Update profile function 
-const updateProfile = async () => {
-    let newName = prompt("Enter your new name:");
-    if (!newName) return;
-
-    const { data, error } = await supabase.auth.getUser();
-    if (error || !data?.user) {
-        alert("User not logged in");
-        return;
-    }
-
-    const { error: updateError } = await supabase
-        .from('profiles')
-        .update({ name: newName })
-        .eq('id', data.user.id);
-
-    if (updateError) {
-        console.error('Update Error:', updateError);
-        alert("Profile update failed.");
-    } else {
-        alert("Profile updated successfully.");
-    }
-};
-
-$(document).ready(function () {
-    // SEARCH BAR
-    let quizzes = ["sports", "music", "movies", "food and drink", "games", "literature", "history", "geography", "maths"];
-
-    let searchBox = $(".searchInput").eq(0);
-    let searchBtn = $(".searchbtn").eq(0);
-
-    function checkQuizAndRedirect() {
-        let searchValue = searchBox.val().trim().toLowerCase();
-
-        if (!searchValue) {
-            searchBox.attr("placeholder", "Field is empty").addClass("red-placeholder");
-        } else if (quizzes.includes(searchValue)) {
-            window.location.href = "/Quiz-Website/AllQuizzes/allQuiz.html";
-        } else {
-            searchBox.val("");
-            searchBox.attr("placeholder", "Not Available").addClass("red-placeholder");
-        }
-    }
-
-    searchBox.on("keydown", (e) => {
-        if (e.key === "Enter") {
-            e.preventDefault();
-            checkQuizAndRedirect();
-        }
-    });
-
-    searchBtn.on("click", (e) => {
-        e.preventDefault();
-        checkQuizAndRedirect();
-    });
-
-    searchBox.on("input", function() {
-        $(this).removeClass("red-placeholder").attr("placeholder", "Search");
-    });
-    $("#dob").inputmask("99-99-9999", { 
+$(document).ready(async function () {
+    // Apply input mask to DOB field
+    $("#dob").inputmask("99-99-9999", {
         placeholder: "DD-MM-YYYY",
         showMaskOnHover: false,
         alias: "datetime",
         inputFormat: "dd-mm-yyyy"
     });
-    // USER LOGOUT
-    $(".logout-btn").on("click", async function (e) {
-        e.preventDefault(); 
 
-        console.log("Logging out...");
-        
-        const { error } = await supabase.auth.signOut();
-        if (error) {
-            console.error("Logout failed:", error);
-            alert("Logout failed. Please try again.");
-            return;
+    const convertDateToISO = (inputDate) => {
+        const parts = inputDate.split("-");
+        if (parts.length !== 3) return null;
+        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    };
+
+    const convertISOToDisplay = (isoDate) => {
+        const parts = isoDate.split("-");
+        if (parts.length !== 3) return '';
+        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+    };
+
+    const safeSet = (id, value) => {
+        if (value) $(`#${id}`).val(value);
+    };
+
+    // Fill input fields with data
+    const user = await getUser();
+    if (user) {
+        safeSet("first-name", user.firstName);
+        safeSet("last-name", user.lastName);
+        safeSet("Username", user.username);
+        safeSet("gmail", user.email);
+        safeSet("age", user.age);
+        safeSet("gender", user.gender);
+        safeSet("qualification", user.qualification);
+        safeSet("country", user.country);
+
+        if (user.DOB) {
+            $("#dob").val(convertISOToDisplay(user.DOB));
         }
+    }
 
-        localStorage.removeItem('userSession');
-        sessionStorage.removeItem('userSession');
+    // Handle form submission
+    $(".profile-form").on("submit", async function (e) {
+        e.preventDefault();
 
-        console.log("User logged out successfully");
-        window.location.href = "/Quiz-Website/SignupAndLogin/login.html";
+        const rawDob = $("#dob").val();
+        const isoDob = convertDateToISO(rawDob);
+
+        // Collect form data
+        const fullFormData = {
+            firstName: $("#first-name").val(),
+            lastName: $("#last-name").val(),
+            username: $("#Username").val(),
+            email: $("#gmail").val(),
+            age: $("#age").val(),
+            gender: $("#gender").val(),
+            qualification: $("#qualification").val(),
+            country: $("#country").val(),
+            DOB: isoDob
+        };
+
+        const { error } = await supabase
+            .from('profiles')
+            .upsert(fullFormData, { onConflict: ['username'] });
+
+        if (error) {
+            console.error("Error saving profile:", error.message);
+            alert("Failed to save profile. Please try again.");
+        } else {
+            console.log("Profile saved successfully!");
+        }
+    });
+
+    // Logout handler
+    $(".logout-btn").on("click", async function () {
+        const { error } = await supabase.auth.signOut();
+        if (error) console.error('Logout Error:', error);
+        localStorage.removeItem('username');
+        localStorage.removeItem('gmail');
+        window.location.href = "../SignupAndLogin/login.html";
     });
 });
