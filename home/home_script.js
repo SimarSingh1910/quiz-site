@@ -98,3 +98,11 @@ $(document).ready(function () {
         }
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const footerLinks = document.querySelectorAll(".footer-link");
+  footerLinks.forEach(link => {
+    link.addEventListener("mouseover", () => {
+      console.log(`Hovered over ${link.textContent}`);
+    });
+  });
+});

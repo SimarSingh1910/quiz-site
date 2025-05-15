@@ -2,7 +2,7 @@ $(document).ready(function () {
     //SEARCH BAR
 
     // Predefined quizzes list
-    let categoryArray = [21, 12, 11, 31, 15, 9, 23, 22, 26];
+    let categoryArray = [21, 12, 11, 31, 15, 9, 23, 22, 26,17,19,24,27,28,29];
     let searchBox = $(".searchInput").eq(0);
     let searchBtn = $(".searchbtn").eq(0);
     let searchValue;
@@ -41,6 +41,24 @@ $(document).ready(function () {
                 break;
             case "celebrities":
                 category = categoryArray[8];
+                break;
+            case "science":
+                category = categoryArray[9];
+                break;
+            case "mathematics":
+                category = categoryArray[10];
+                break;
+            case "politics":
+                category = categoryArray[11];
+                break;
+            case "animals":
+                category = categoryArray[12];
+                break;
+            case "vehicles":
+                category = categoryArray[13];
+                break;
+            case "comics":
+                category = categoryArray[14];
                 break;
             default:
                 category = "";
