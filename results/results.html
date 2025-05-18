@@ -29,11 +29,15 @@
         <a href="../results/results.html" class="nav-link results">Results</a>
       </li>
     </ul>
+    <div class="logout-btn"><button>logout</button></div>
   </nav>
 
 <!-- main page -->
- <main>
+<main>
   <div class="mainCont">
+    <div class="header_text">
+      <p>Results</p>
+    </div>
     <table id="resultsTable">
       <thead>
         <tr>
@@ -43,18 +47,13 @@
           <th>Score</th>
         </tr>
       </thead>
-      <tbody class="tablebody">
-        <tr>
-          <td>1.</td>
-          <td>sports</td>
-          <td>easy</td>
-          <td>10/10</td>
-        </tr>
+      <tbody class="tableBody">
+        <!-- rows are added dynamically here with js -->
       </tbody>
     </table>
     
   </div>
- </main>
+</main>
 
 
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="

@@ -148,5 +148,9 @@ $(document).ready(function () {
         fetching(URL);
         window.location.hash = `no.ofQues=${numQuestions}&category=${quiz_category}&difficulty=${difficulty}#generate`;
         $(".submit").css("display", "block");
+
+        $(".quizTag").on(click, () => {
+            window.location.href("../home/home.html");
+        })
     });
 });
