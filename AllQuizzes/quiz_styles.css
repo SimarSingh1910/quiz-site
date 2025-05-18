@@ -62,8 +62,11 @@ p {
 .submit {
     display: none;
 }
+.btn{
+    font-weight: 900;
+}
 
-.col button {
+.btn-all{
     padding: 8px 14px;
     font-size: 16px;
     color: var(--text-dark);
@@ -74,6 +77,14 @@ p {
     transition: background-color 0.3s ease;
 }
 
-.col button:hover {
+.btn-all:hover {
     background-color: var(--quizbox-hover);
+    color: var(--text-dark);
+}
+/* make back to home button stick at top right corner */
+#backHome {
+    border: 2px solid var(--text-dark);
+    position: fixed;
+    top: 10px;
+    right: 10px;
 }

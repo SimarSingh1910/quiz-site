@@ -52,10 +52,10 @@ document.querySelector(".btn").addEventListener("click", async () => {
     console.log("button clicked");
     let score = 0;
     for (let ques in results) {
-        let userAnswers = [];
-        for (let i = 1; i <= 4; i++) {
-            userAnswers.push(document.querySelector(`input[name="answer${ques}"]:checked`).value);
-        }
+        // let userAnswers = [];
+        // for (let i = 1; i <= 4; i++) {
+        //     userAnswers.push(document.querySelector(`input[name="answer${ques}"]:checked`).value);
+        // }
         let userAnswer = document.querySelector(`input[name="answer${ques}"]:checked`).value;
         $(`#answer${ques}`).text(`Your Answer : ${userAnswer}`);
         $(`#correctAnswer${ques}`).text(`Correct Answer : ${correctAnswers[ques]}`);
@@ -86,9 +86,30 @@ document.querySelector(".btn").addEventListener("click", async () => {
                 });
             if (error) {
                 console.log(error);   
-            }
+    }
+    for (let ques in results) {
+        let question = decodeHtmlEntities(results[ques].question);
+        let correctAnswer = decodeHtmlEntities(results[ques].correct_answer);
+        const { error } = await supabase
+            .from('questions')
+            .insert({
+                solved_by: username,
+                level:difficulty,
+                question: question,
+                correctAnswer: correctAnswer,
+                userAnswer: document.querySelector(`input[name="answer${ques}"]:checked`).value
+            });
+        if (error) {
+            console.log(error);
+        }
+    }
 });
+
 $(document).ready(function () {
+    $("#backHome").click(function (event) {
+        event.preventDefault();
+        window.location.href = "../home/home.html";
+    });
     $("#generate").click(function (event) {
         event.preventDefault();
         console.log("Generating quiz...");
