@@ -111,15 +111,16 @@ body::-webkit-scrollbar-track {
 }
 
 .navbar button {
+    margin-right: 1rem;
     padding: 8px 14px;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 18px;
     color: white;
-    background-color: var(--quizbox-bg);
-    border: 1px solid var(--quizbox-hover);
-    border-radius: 6px;
+    background-color:var(--quizbox-bg);
+    border: 2px solid var(--quizbox-hover);
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-weight: bold;
 }
 
 .navbar button:hover {
@@ -134,6 +135,16 @@ body::-webkit-scrollbar-track {
     cursor: pointer;
 }
 
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.profile-name{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
 
 /* media queries for navbar */
 

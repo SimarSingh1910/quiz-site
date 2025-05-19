@@ -12,7 +12,6 @@ const getUser = async () => {
 $(document).ready(function () {
     if (username && gmail) {
         $(".profile-name").text(username);
-        // $(".profile-email").text(gmail);
         $(".logout-btn").text("Logout");
         getUser();
     }
